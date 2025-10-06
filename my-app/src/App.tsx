@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.tsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Index from "./pages/Index"; // Assumes Index.tsx is in a 'pages' folder
+import NotFound from "./pages/NotFound"; // Placeholder for a simple component
 
-function App() {
-  const [count, setCount] = useState(0)
+// Simplified placeholder components for the files that were removed
+const BarebonesIndex = () => <Index />;
+const BarebonesNotFound = () => (
+  <div className="text-center p-10">404 - Not Found</div>
+);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+const App = () => (
+  // Only keep the BrowserRouter for routing
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<BarebonesIndex />} />
+      <Route path="*" element={<BarebonesNotFound />} />
+    </Routes>
+  </BrowserRouter>
+);
 
-export default App
+export default App;
+
+// NOTE: You will need to install 'react-router-dom'
