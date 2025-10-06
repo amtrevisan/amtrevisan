@@ -1,18 +1,15 @@
-import Hero from "../components/Hero"; // Adjust path as needed
+import Hero from "@/components/Hero";
 
 const Index = () => {
   return (
-    // The main container. Simplified Tailwind classes.
-    <div className="min-h-screen bg-white text-gray-900">
-      {/* The main content area */}
-      <div>
+    <div className="min-h-screen bg-background relative">
+      {/* This is a minimal Index.tsx file that only renders the Hero component.
+        Components like CursorBubbles, About, Projects, Skills, Experience, and Contact 
+        as well as the footer from the original file have been removed.
+      */}
+      <div className="relative z-10">
         <Hero />
       </div>
-
-      {/* Barebones Footer */}
-      <footer className="py-4 border-t border-gray-200 text-center">
-        <p className="text-sm text-gray-500">© 2024 Barebones Portfolio</p>
-      </footer>
     </div>
   );
 };
