@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-
+import About from "@/components/About";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
@@ -9,6 +9,7 @@ const Index = () => {
       */}
       <div className="relative z-10">
         <Hero />
+        <About />
       </div>
     </div>
   );
