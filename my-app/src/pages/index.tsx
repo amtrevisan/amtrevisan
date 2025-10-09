@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
 
 const Index = () => {
   return (
@@ -9,6 +10,7 @@ const Index = () => {
         <Hero />
         <About />
         <Experience />
+        <Projects />
       </div>
 
       <footer className="py-8 border-t border-border">
