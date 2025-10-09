@@ -72,9 +72,9 @@ const Hero = () => {
         </div>
 
         <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-          B.S. in Computer Science & Engineering | Research in autonomous drones
-          & LiDAR | Passionate about ML, full-stack development, and creating
-          innovative solutions
+          Enrolled in B.S. in Computer Science & Engineering, participating in
+          research in autonomous drones & LiDAR, Passionate about ML, full-stack
+          development, and systems engineering.
         </p>
 
         <div className="flex gap-4 justify-center mb-16">
