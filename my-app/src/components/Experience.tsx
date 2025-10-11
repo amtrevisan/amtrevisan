@@ -29,13 +29,13 @@ const Experience = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
-    <section className="py-20 relative" ref={ref}>
+    <section id="experience" className="py-20 relative" ref={ref}>
       <div className="container mx-auto px-4">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-5xl font-bold mb-4">
+          <h2 className="text-h2 font-display mb-4">
             Research & <span className="text-gradient">Experience</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-body text-text-secondary max-w-2xl mx-auto">
             My journey in computer science and research
           </p>
         </div>
@@ -44,30 +44,30 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <Card
               key={exp.title}
-              className={`glass-card p-8 hover:scale-102 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 ${
+              className={`card-project p-8 hover:scale-102 ${
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-gradient mb-2">{exp.title}</h3>
-                  <div className="flex items-center gap-2 text-muted-foreground mb-2">
+                  <h3 className="text-h3 font-display text-gradient mb-2">{exp.title}</h3>
+                  <div className="flex items-center gap-2 text-text-secondary mb-2">
                     <Briefcase className="w-4 h-4" />
-                    <span>{exp.organization}</span>
+                    <span className="text-body-sm">{exp.organization}</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-2 text-muted-foreground">
+                <div className="flex items-center gap-2 text-text-secondary">
                   <Calendar className="w-4 h-4" />
-                  <span className="text-sm">{exp.period}</span>
+                  <span className="text-caption">{exp.period}</span>
                 </div>
               </div>
               
               <ul className="space-y-2">
                 {exp.description.map((item, i) => (
-                  <li key={i} className="text-muted-foreground flex items-start gap-2">
+                  <li key={i} className="text-text-secondary flex items-start gap-2">
                     <span className="text-primary mt-1.5">▹</span>
-                    <span>{item}</span>
+                    <span className="text-body-sm">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -76,22 +76,22 @@ const Experience = () => {
 
           {/* Education Card */}
           <Card
-            className={`glass-card p-8 hover:scale-102 hover:shadow-2xl hover:shadow-secondary/20 transition-all duration-500 ${
+            className={`card-project p-8 hover:scale-102 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
             }`}
             style={{ transitionDelay: '400ms' }}
           >
             <div className="flex flex-col md:flex-row md:items-start md:justify-between">
               <div>
-                <h3 className="text-2xl font-bold text-gradient mb-2">B.S. in Computer Science and Engineering</h3>
-                <div className="flex items-center gap-2 text-muted-foreground mb-2">
+                <h3 className="text-h3 font-display text-gradient mb-2">B.S. in Computer Science and Engineering</h3>
+                <div className="flex items-center gap-2 text-text-secondary mb-2">
                   <MapPin className="w-4 h-4" />
-                  <span>University of Puerto Rico, Mayagüez Campus</span>
+                  <span className="text-body-sm">University of Puerto Rico, Mayagüez Campus</span>
                 </div>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
+              <div className="flex items-center gap-2 text-text-secondary">
                 <Calendar className="w-4 h-4" />
-                <span className="text-sm">Expected Graduation: 2028</span>
+                <span className="text-caption">Expected Graduation: 2028</span>
               </div>
             </div>
           </Card>

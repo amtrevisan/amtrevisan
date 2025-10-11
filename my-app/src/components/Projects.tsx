@@ -59,10 +59,10 @@ const Projects = () => {
     <section id="projects" className="py-20 relative" ref={ref}>
       <div className="container mx-auto px-4">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-5xl font-bold mb-4">
+          <h2 className="text-h2 font-display mb-4">
             Featured <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-body text-text-secondary max-w-2xl mx-auto">
             A showcase of my recent work and personal projects
           </p>
         </div>

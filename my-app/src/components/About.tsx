@@ -27,28 +27,28 @@ const About = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
-    <section className="py-20 relative" ref={ref}>
+    <section id="about" className="py-20 relative" ref={ref}>
       <div className="container mx-auto px-4">
         <div
           className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
         >
-          <h2 className="text-5xl font-bold mb-4">
+          <h2 className="text-h2 font-display mb-4">
             About <span className="text-gradient">Me</span>
           </h2>
         </div>
 
         <div className="max-w-4xl mx-auto">
           <Card
-            className={`glass-card p-8 mb-12 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
+            className={`card-project p-8 mb-12 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
           >
-            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            <p className="text-body text-text-secondary leading-relaxed mb-4">
               I'm a Computer Science and Engineering student at the University
               of Puerto Rico, Mayagüez Campus. Currently working with the LIDRON
               Research Team on autonomous drone development, focusing on
               LiDAR-based autonomous landing capabilities and computer vision
               techniques.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-body text-text-secondary leading-relaxed">
               My experience spans from leading full-stack mobile development
               teams to conducting mathematical research in coding theory with
               the NSF Research Experience for Undergraduates program. I'm
@@ -64,7 +64,7 @@ const About = () => {
               return (
                 <Card
                   key={highlight.title}
-                  className={`glass-card p-6 text-center hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:glow-primary ${
+                  className={`card-project p-6 text-center hover:scale-105 ${
                     isVisible
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-20"
@@ -74,8 +74,8 @@ const About = () => {
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 mb-4">
                     <Icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{highlight.title}</h3>
-                  <p className="text-muted-foreground">
+                  <h3 className="text-h3 font-display mb-2">{highlight.title}</h3>
+                  <p className="text-body-sm text-text-secondary">
                     {highlight.description}
                   </p>
                 </Card>

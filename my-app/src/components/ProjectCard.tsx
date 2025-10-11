@@ -25,7 +25,7 @@ const ProjectCard = ({
 
   return (
     <Card
-      className="glass-card overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl relative"
+      className="card-project overflow-hidden group cursor-pointer relative"
       style={{
         transform: isHovered
           ? "rotateX(5deg) rotateY(5deg) translateY(-10px)"
@@ -48,23 +48,24 @@ const ProjectCard = ({
       </div>
 
       <div className="p-6">
-        <h3 className="text-2xl font-bold mb-2 text-gradient">{title}</h3>
-        <p className="text-muted-foreground mb-4 line-clamp-2">{description}</p>
+        <h3 className="text-h3 font-display mb-2 text-gradient">{title}</h3>
+        <p className="text-body-sm text-text-secondary mb-4 line-clamp-2">{description}</p>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.map((tag) => (
-            <Badge key={tag} variant="secondary" className="glass-card">
+            <span key={tag} className="tag">
               {tag}
-            </Badge>
+            </span>
           ))}
         </div>
 
         <div className="flex gap-2">
           {githubUrl && (
             <Button
-              variant="outline"
+              variant="secondary"
               size="sm"
-              className="gap-2 hover:glow-primary transition-all"
+              className="gap-2"
+              onClick={() => window.open(githubUrl, "_blank")}
             >
               <Github className="w-4 h-4" />
               Code
@@ -72,8 +73,10 @@ const ProjectCard = ({
           )}
           {liveUrl && (
             <Button
+              variant="primary"
               size="sm"
-              className="gap-2 glow-primary hover:scale-105 transition-transform"
+              className="gap-2"
+              onClick={() => window.open(liveUrl, "_blank")}
             >
               <ExternalLink className="w-4 h-4" />
               Live Demo

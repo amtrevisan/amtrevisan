@@ -35,7 +35,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-18">
       {/* Animated background gradient with parallax */}
       <div
         className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10"
@@ -47,40 +47,41 @@ const Hero = () => {
       {/* Multiple floating elements with different animations */}
       <div className="absolute top-20 left-20 w-72 h-72 bg-primary/30 rounded-full blur-3xl animate-float" />
       <div
-        className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/30 rounded-full blur-3xl animate-float"
+        className="absolute bottom-20 right-20 w-96 h-96 bg-accent/30 rounded-full blur-3xl animate-float"
         style={{ animationDelay: "1s" }}
       />
       <div
-        className="absolute top-1/2 left-1/4 w-64 h-64 bg-accent/20 rounded-full blur-3xl animate-float"
+        className="absolute top-1/2 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-float"
         style={{ animationDelay: "2s" }}
       />
       <div
-        className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-float"
+        className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-float"
         style={{ animationDelay: "1.5s" }}
       />
 
       <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in-up">
-        <h1 className="text-6xl md:text-8xl font-bold mb-6">
+        <h1 className="text-h1 md:text-8xl font-display mb-6">
           Hi, I'm <span className="text-gradient">Alex Morales</span>
         </h1>
 
         <div className="h-12 mb-8">
-          <p className="text-2xl md:text-3xl text-muted-foreground">
+          <p className="text-2xl md:text-3xl text-text-secondary font-body">
             {text}
             <span className="animate-glow">|</span>
           </p>
         </div>
 
-        <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+        <p className="text-body text-text-secondary mb-12 max-w-2xl mx-auto">
           Enrolled in B.S. in Computer Science & Engineering, participating in
           research in autonomous drones & LiDAR, Passionate about ML, full-stack
           development, and systems engineering.
         </p>
 
-        <div className="flex gap-4 justify-center mb-16">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
           <Button
+            variant="primary"
             size="lg"
-            className="gap-2 glow-primary hover:scale-105 transition-transform relative overflow-hidden group"
+            className="gap-2 hover:scale-105 transition-transform relative overflow-hidden group"
             onClick={() =>
               window.open("https://github.com/AlexMoralesDev", "_blank")
             }
@@ -90,9 +91,9 @@ const Hero = () => {
             <span className="relative z-10">GitHub</span>
           </Button>
           <Button
+            variant="secondary"
             size="lg"
-            variant="outline"
-            className="gap-2 hover:scale-105 transition-transform glass-card hover:bg-primary/10"
+            className="gap-2 hover:scale-105 transition-transform"
             onClick={() =>
               window.open(
                 "https://www.linkedin.com/in/alex-morales-dev/",
@@ -104,9 +105,9 @@ const Hero = () => {
             LinkedIn
           </Button>
           <Button
+            variant="secondary"
             size="lg"
-            variant="outline"
-            className="gap-2 hover:scale-105 transition-transform glass-card hover:bg-primary/10"
+            className="gap-2 hover:scale-105 transition-transform"
             onClick={() =>
               (window.location.href = "mailto:alex.morales8@upr.edu")
             }
@@ -118,7 +119,7 @@ const Hero = () => {
 
         <button
           onClick={scrollToProjects}
-          className="animate-bounce text-muted-foreground hover:text-primary transition-colors"
+          className="animate-bounce-subtle text-text-secondary hover:text-primary transition-colors"
           aria-label="Scroll to projects"
         >
           <ArrowDown className="w-8 h-8" />
