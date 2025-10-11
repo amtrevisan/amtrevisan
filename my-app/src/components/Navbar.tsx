@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,8 +63,8 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Social Links - Desktop */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Social Links & Theme Toggle - Desktop */}
+          <div className="hidden md:flex items-center space-x-2">
             <Button
               variant="ghost"
               size="icon"
@@ -91,6 +92,7 @@ const Navbar = () => {
             >
               <Mail className="w-5 h-5" />
             </Button>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -121,34 +123,37 @@ const Navbar = () => {
                     {item.name}
                   </button>
                 ))}
-                <div className="flex items-center space-x-4 pt-4 border-t border-border">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => window.open("https://github.com/AlexMoralesDev", "_blank")}
-                    className="text-text-secondary hover:text-primary"
-                  >
-                    <Github className="w-4 h-4 mr-2" />
-                    GitHub
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => window.open("https://www.linkedin.com/in/alex-morales-dev/", "_blank")}
-                    className="text-text-secondary hover:text-primary"
-                  >
-                    <Linkedin className="w-4 h-4 mr-2" />
-                    LinkedIn
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => (window.location.href = "mailto:alex.morales8@upr.edu")}
-                    className="text-text-secondary hover:text-primary"
-                  >
-                    <Mail className="w-4 h-4 mr-2" />
-                    Email
-                  </Button>
+                <div className="flex items-center justify-between pt-4 border-t border-border">
+                  <div className="flex items-center space-x-4">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => window.open("https://github.com/AlexMoralesDev", "_blank")}
+                      className="text-text-secondary hover:text-primary"
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      GitHub
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => window.open("https://www.linkedin.com/in/alex-morales-dev/", "_blank")}
+                      className="text-text-secondary hover:text-primary"
+                    >
+                      <Linkedin className="w-4 h-4 mr-2" />
+                      LinkedIn
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => (window.location.href = "mailto:alex.morales8@upr.edu")}
+                      className="text-text-secondary hover:text-primary"
+                    >
+                      <Mail className="w-4 h-4 mr-2" />
+                      Email
+                    </Button>
+                  </div>
+                  <ThemeToggle />
                 </div>
               </div>
             </div>

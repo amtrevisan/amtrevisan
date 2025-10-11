@@ -1,5 +1,6 @@
 // App.tsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "./components/ThemeProvider";
 import Index from "./pages/Index"; // Assumes Index.tsx is in a 'pages' folder
 import NotFound from "./pages/NotFound"; // Placeholder for a simple component
 
@@ -10,15 +11,14 @@ const BarebonesNotFound = () => (
 );
 
 const App = () => (
-  // Only keep the BrowserRouter for routing
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<BarebonesIndex />} />
-      <Route path="*" element={<BarebonesNotFound />} />
-    </Routes>
-  </BrowserRouter>
+  <ThemeProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<BarebonesIndex />} />
+        <Route path="*" element={<BarebonesNotFound />} />
+      </Routes>
+    </BrowserRouter>
+  </ThemeProvider>
 );
 
 export default App;
-
-// NOTE: You will need to install 'react-router-dom'
