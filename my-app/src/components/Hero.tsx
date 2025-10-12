@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 
 const Hero = () => {
   const [text, setText] = useState("");
-  const fullText = "CS Student & Developer at UPR Mayagüez";
+  const fullText = "Third-year CS Student & Developer at UPR Mayagüez";
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -72,9 +72,10 @@ const Hero = () => {
         </div>
 
         <p className="text-body text-text-secondary mb-12 max-w-2xl mx-auto">
-          Enrolled in B.S. in Computer Science & Engineering, participating in
-          research in autonomous drones & LiDAR, Passionate about ML, full-stack
-          development, and systems engineering.
+          Third-year Computer Science student with hands-on experience in collaborative software projects. 
+          Open to a range of software roles, with particular interest in machine learning, embedded systems, 
+          and web or app development. Skilled in applying programming fundamentals to build efficient, 
+          reliable solutions in team settings.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">

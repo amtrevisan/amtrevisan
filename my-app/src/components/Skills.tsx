@@ -2,20 +2,28 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const skillCategories = [
   {
-    category: "Languages",
-    skills: ["Python", "Java", "C++", "C#", "JavaScript", "TypeScript"],
+    category: "Programming Languages",
+    skills: ["Python", "Java", "C++", "C#", "JavaScript", "TypeScript", "Dart", "MATLAB"],
   },
   {
     category: "Frameworks & Tools",
-    skills: ["Flutter", "Unity", "React", "Git", "CI/CD", "Agile/Scrum"],
+    skills: ["Flutter", "Unity", "React", "ROS", "Scikit-Learn", "Pandas", "Docker", "Linux"],
+  },
+  {
+    category: "Development Practices",
+    skills: ["Git", "CI/CD", "Agile/Scrum", "DevOps", "Bash Scripting", "LaTeX", "PostgreSQL", "Supabase"],
   },
   {
     category: "Specializations",
-    skills: ["Machine Learning", "Computer Vision", "LiDAR", "Autonomous Systems", "Sensor Fusion"],
+    skills: ["Machine Learning", "Computer Vision", "LiDAR", "Autonomous Systems", "Sensor Fusion", "Embedded Systems", "Data Analysis"],
   },
   {
     category: "Core CS",
-    skills: ["Algorithms", "Data Structures", "Software Engineering", "System Design", "Graph Theory"],
+    skills: ["Algorithms", "Data Structures", "Software Engineering", "System Design", "Graph Theory", "Coding Theory", "Combinatorics"],
+  },
+  {
+    category: "Mathematics",
+    skills: ["Calculus", "Linear Algebra", "Differential Equations", "Discrete Mathematics", "Error-Correcting Codes", "Cryptography"],
   },
 ];
 
@@ -36,7 +44,7 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={category.category}

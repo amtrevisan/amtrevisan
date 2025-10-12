@@ -30,6 +30,9 @@ const Footer = () => {
             <p className="text-body-sm text-background/80">
               © 2024 Alex Morales Trevisan | B.S. Computer Science & Engineering, UPR Mayagüez
             </p>
+            <p className="text-caption text-background/60 mt-1">
+              (787) 231-3640 | alex.morales8@upr.edu
+            </p>
           </div>
 
           {/* Center - Typing animation */}

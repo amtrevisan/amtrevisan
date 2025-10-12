@@ -7,19 +7,19 @@ const highlights = [
     icon: Code2,
     title: "Research Experience",
     description:
-      "Working on autonomous drones with LiDAR and computer vision, plus NSF research in coding theory",
+      "LIDRON Research Team member developing LiDAR-based autonomous landing algorithms in ROS and Python for real-time perception, mapping, and navigation on Raspberry Pi powered drones",
   },
   {
     icon: Rocket,
     title: "Team Leadership",
     description:
-      "Led 8-member team in full-stack development with Agile methodologies and CI/CD",
+      "Led 8-member team to deliver full-stack cross-platform app using Flutter and Dart, enabling 100% of planned features to be deployed on schedule through Scrum sprints and DevOps practices",
   },
   {
     icon: Users,
     title: "Diverse Projects",
     description:
-      "From ML prediction models to Unity games, always exploring new technologies",
+      "From ML prediction models (33% → 60% accuracy improvement) to Unity game development, always exploring new technologies and applying programming fundamentals",
   },
 ];
 
@@ -42,11 +42,11 @@ const About = () => {
             className={`card-project p-8 mb-12 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
           >
             <p className="text-body text-text-secondary leading-relaxed mb-4">
-              I'm a Computer Science and Engineering student at the University
-              of Puerto Rico, Mayagüez Campus. Currently working with the LIDRON
+              I'm a third-year Computer Science and Engineering student at the University
+              of Puerto Rico, Mayagüez Campus with a GPA of 3.0. Currently working with the LIDRON
               Research Team on autonomous drone development, focusing on
-              LiDAR-based autonomous landing capabilities and computer vision
-              techniques.
+              LiDAR-based autonomous landing capabilities, computer vision
+              techniques, and embedded systems integration.
             </p>
             <p className="text-body text-text-secondary leading-relaxed">
               My experience spans from leading full-stack mobile development
@@ -54,7 +54,8 @@ const About = () => {
               the NSF Research Experience for Undergraduates program. I'm
               passionate about applying theoretical CS concepts to solve
               real-world problems, whether through machine learning, web
-              development, or autonomous systems.
+              development, or autonomous systems. I'm open to a range of software roles,
+              with particular interest in machine learning, embedded systems, and web or app development.
             </p>
           </Card>
 

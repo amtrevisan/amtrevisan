@@ -21,6 +21,7 @@ const Navbar = () => {
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
+    { name: "Courses", href: "#courses" },
   ];
 
   const scrollToSection = (href: string) => {

@@ -51,12 +51,12 @@
 
 /* Dark mode variables */
 .dark {
-  --color-bg: #1C1E21;
-  --color-surface: #2E4057;
-  --color-surface-dark: #1C1E21;
-  --color-text-primary: #F9FAFB;
-  --color-text-secondary: #9CA3AF;
-  --color-border: #374151;
+  --color-bg: #0F1115;
+  --color-surface: #1A1D23;
+  --color-surface-dark: #0F1115;
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #CBD5E1;
+  --color-border: #334155;
   --color-link: #60A5FA;
 }
 
@@ -185,7 +185,7 @@
   }
 
   .dark .navbar-blur {
-    background-color: rgba(28, 30, 33, 0.8);
+    background-color: rgba(15, 17, 21, 0.9);
   }
 
   /* Gradient text */

@@ -6,21 +6,22 @@ const experiences = [
   {
     title: "LIDRON Research Team Member",
     organization: "University of Puerto Rico, Mayagüez",
-    period: "August 2024 - Present",
+    period: "August 2025 - Present",
+    technologies: "Python, ROS, Raspberry Pi, Embedded Systems",
     description: [
-      "Contributing to autonomous drone development with focus on LiDAR-based autonomous landing capabilities",
-      "Applying computer vision and sensor fusion techniques for real-time environmental mapping",
-      "Collaborating on algorithm development for autonomous navigation and landing systems"
+      "Developed LiDAR-based autonomous landing algorithms in ROS and Python for real-time perception, mapping, and navigation on a Raspberry Pi powered Drone as part of an interdisciplinary project",
+      "Integrated computer vision, sensor fusion, and embedded systems to enable autonomous decision-making and flight control"
     ],
   },
   {
     title: "NSF Research Experience for Undergraduates",
     organization: "National Science Foundation",
     period: "May - August 2023",
+    technologies: "MATLAB, LaTeX",
     description: [
-      "Conducted mathematical research in coding theory and combinatorics",
-      "Collaborated with faculty mentors to design algorithms and analyze data structures",
-      "Developed analytical skills through projects in graph theory and error-correcting codes"
+      "Conducted mathematical research in coding theory and combinatorics, applying discrete mathematics to solve theoretical and computational problems",
+      "Collaborated with faculty mentors and peers to design algorithms and analyze data structures",
+      "Developed analytical and problem-solving skills through projects in graph theory and error-correcting codes, relevant to software reliability and cryptography"
     ],
   },
 ];
@@ -56,6 +57,9 @@ const Experience = () => {
                     <Briefcase className="w-4 h-4" />
                     <span className="text-body-sm">{exp.organization}</span>
                   </div>
+                  <div className="flex items-center gap-2 text-text-secondary mb-2">
+                    <span className="text-caption font-medium">Technologies: {exp.technologies}</span>
+                  </div>
                 </div>
                 <div className="flex items-center gap-2 text-text-secondary">
                   <Calendar className="w-4 h-4" />
@@ -88,10 +92,13 @@ const Experience = () => {
                   <MapPin className="w-4 h-4" />
                   <span className="text-body-sm">University of Puerto Rico, Mayagüez Campus</span>
                 </div>
+                <div className="flex items-center gap-2 text-text-secondary mb-2">
+                  <span className="text-caption font-medium">GPA: 3.0</span>
+                </div>
               </div>
               <div className="flex items-center gap-2 text-text-secondary">
                 <Calendar className="w-4 h-4" />
-                <span className="text-caption">Expected Graduation: 2028</span>
+                <span className="text-caption">Expected Graduation: May 2028</span>
               </div>
             </div>
           </Card>
