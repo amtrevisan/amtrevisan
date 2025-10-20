@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { ProfileSection } from "@/components/ProfileSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 
 const Index = () => {
@@ -11,6 +12,7 @@ const Index = () => {
     <div className="relative">
       <Header />
       <main>
+        <ProfileSection onScrollToProjects={scrollToProjects} />
         <ExperienceSection />
       </main>
     </div>
