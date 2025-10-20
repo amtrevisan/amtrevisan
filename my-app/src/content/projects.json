@@ -1,88 +1,133 @@
 {
   "projects": [
     {
-      "id": "airsim-quadcopter",
-      "title": "AirSim Quadcopter RL",
-      "subtitle": "Autonomous Landing System",
-      "shortDescription": "Reinforcement learning model for autonomous quadcopter landing in AirSim simulation environment.",
-      "description": "Developed a deep reinforcement learning agent capable of autonomous quadcopter landing in complex environments. The system uses PPO (Proximal Policy Optimization) to learn stable landing behaviors through trial and error in Microsoft AirSim. Integrated with Unreal Engine for photo-realistic simulation and trained on diverse terrain conditions including moving platforms and adverse weather.\n\nKey achievements include 94% successful landing rate in testing, sub-0.5m landing accuracy, and real-time inference at 60 FPS. The model generalizes well to unseen environments and demonstrates robust performance in windy conditions.",
-      "roles": ["ML Engineer", "Simulation Developer"],
+      "id": "pronunciation-coach",
+      "title": "Pronunciation Coach Application",
+      "subtitle": "Full-Stack Cross-Platform App",
+      "shortDescription": "Cross-platform pronunciation training app built with Flutter and Dart using Scrum and DevOps practices.",
+      "description": "Led an 8-member team to deliver a full-stack cross-platform app using Flutter and Dart. Implemented Scrum sprints, Git-based workflows, and DevOps pipelines to deploy 100% of planned features on schedule. Managed a Supabase backend with PostgreSQL, integrated secure authentication, and developed a responsive, user-friendly front end for pronunciation training.",
+      "roles": ["Full-Stack Developer", "Team Lead"],
       "technologies": [
-        "Python",
-        "PyTorch",
-        "AirSim",
-        "Unreal Engine",
-        "ROS",
-        "OpenCV"
+        "Flutter",
+        "Dart",
+        "Supabase",
+        "PostgreSQL",
+        "Git",
+        "DevOps"
       ],
-      "date": "2024-08",
+      "date": "2025-08",
       "images": [],
       "videoUrl": "",
       "liveUrl": "",
-      "repoUrl": "https://github.com/alex/airsim-rl",
+      "repoUrl": "",
+      "featured": true,
+      "colorAccent": "neonBlue"
+    },
+    {
+      "id": "lidron-research",
+      "title": "LIDRON Research Project",
+      "subtitle": "LiDAR-Based Autonomous Landing",
+      "shortDescription": "Developed LiDAR-based landing algorithms for autonomous drone navigation using ROS and embedded systems.",
+      "description": "Designed and implemented LiDAR-based autonomous landing algorithms in ROS and Python for real-time perception, mapping, and navigation on a Raspberry Pi-powered drone. Integrated computer vision, sensor fusion, and embedded control systems to enable autonomous decision-making and flight stability as part of an interdisciplinary robotics research team.",
+      "roles": ["Embedded Systems Engineer", "Research Assistant"],
+      "technologies": ["Python", "ROS", "Raspberry Pi", "LiDAR", "OpenCV"],
+      "date": "2024-05",
+      "images": [],
+      "videoUrl": "",
+      "liveUrl": "",
+      "repoUrl": "",
       "featured": true,
       "colorAccent": "neonCyan"
     },
     {
-      "id": "unity-goblin-ai",
-      "title": "Unity Goblin AI",
-      "subtitle": "Enemy Behavior System",
-      "shortDescription": "Sophisticated enemy AI system featuring goblin archetypes with emergent tactical behaviors in Unity.",
-      "description": "Built a modular AI behavior system for goblin enemies using Unity DOTS (Data-Oriented Technology Stack) for high-performance simulation of 500+ agents simultaneously. Implemented hierarchical state machines, formation tactics, and perception systems.\n\nGoblins exhibit pack hunting behaviors, retreat strategies when outnumbered, and coordinate ambush tactics. The system uses influence maps for tactical positioning and includes patrol routes, alert states, and dynamic difficulty adjustment. Performance optimized using ECS architecture achieving 144 FPS with full AI computations.",
-      "roles": ["Game AI Developer", "Systems Programmer"],
+      "id": "laliga-predictor",
+      "title": "LaLiga Match Predictor",
+      "subtitle": "Machine Learning System",
+      "shortDescription": "Machine learning web app predicting LaLiga match outcomes with Random Forests and data-driven analysis.",
+      "description": "Developed a full-stack ML system for predicting LaLiga match outcomes using Python and scikit-learn. Implemented data cleaning and feature engineering pipelines with pandas, improving prediction accuracy from 33% to 60% using a Random Forest model. Built and deployed the frontend in React, TypeScript, and TailwindCSS, integrated with a PostgreSQL database backend.",
+      "roles": ["ML Engineer", "Full-Stack Developer"],
       "technologies": [
-        "C#",
-        "Unity",
-        "DOTS",
-        "ECS",
-        "Behavior Trees",
-        "NavMesh"
+        "Python",
+        "scikit-learn",
+        "pandas",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "PostgreSQL"
       ],
-      "date": "2024-06",
+      "date": "2024-04",
       "images": [],
       "videoUrl": "",
       "liveUrl": "",
-      "repoUrl": "https://github.com/alex/unity-goblin-ai",
+      "repoUrl": "",
       "featured": true,
       "colorAccent": "neonMagenta"
     },
     {
-      "id": "portfolio-tron",
-      "title": "Personal Portfolio",
-      "subtitle": "Tron Legacy Inspired",
-      "shortDescription": "This website showcasing projects and experience, built with modern web technologies and Tron aesthetic.",
-      "description": "Designed and developed a high-performance single-page portfolio featuring full-screen project cards with smooth scroll snapping and keyboard navigation. Implements a Tron Legacy inspired design system with crisp neon strokes, geometric precision, and subtle glow effects.\n\nTechnical highlights include lazy-loaded optimized images, accessibility-first keyboard navigation, CSS scroll snap for smooth transitions, and responsive layouts for all devices. Built with TypeScript for type safety and maintainability. Achieves perfect Lighthouse scores with sub-1s FCP and LCP under 2s.",
-      "roles": ["Full-Stack Developer", "UI/UX Designer"],
-      "technologies": [
-        "TypeScript",
-        "React",
-        "Vite",
-        "Tailwind CSS",
-        "Framer Motion"
-      ],
-      "date": "2025-01",
+      "id": "home-server",
+      "title": "Personal Home Server",
+      "subtitle": "Dockerized Media System",
+      "shortDescription": "Linux-based home server for media services managed through Docker and Bash automation.",
+      "description": "Built and maintain a personal home server running on a headless Linux distribution. Deployed media and utility services using Docker containers and managed automation and maintenance through Bash scripting. Focused on reliability, efficient resource usage, and long-term scalability.",
+      "roles": ["System Administrator", "DevOps Engineer"],
+      "technologies": ["Linux", "Docker", "Bash"],
+      "date": "2024-03",
       "images": [],
       "videoUrl": "",
-      "liveUrl": "https://alex-portfolio.lovable.app",
-      "repoUrl": "https://github.com/alex/portfolio",
-      "featured": true,
-      "colorAccent": "neonBlue"
+      "liveUrl": "",
+      "repoUrl": "",
+      "featured": false,
+      "colorAccent": "neonGreen"
+    },
+    {
+      "id": "sefuelaluz",
+      "title": "SeFueLaLuz",
+      "subtitle": "Unity Game Jam Project",
+      "shortDescription": "Solo-developed Unity game featuring AI-driven enemies and gameplay systems built entirely in C#.",
+      "description": "Solely designed and developed a complete Unity game during a one-week game jam. Implemented core gameplay systems, enemy chasing AI, and player interaction mechanics entirely in C#. Focused on tight iteration cycles and efficient code structure under time constraints.",
+      "roles": ["Game Developer"],
+      "technologies": ["Unity", "C#"],
+      "date": "2024-02",
+      "images": [],
+      "videoUrl": "",
+      "liveUrl": "",
+      "repoUrl": "",
+      "featured": false,
+      "colorAccent": "neonOrange"
     }
   ],
   "experiences": [
     {
-      "id": "exp1",
-      "company": "Robotics Lab",
+      "id": "nsf-reu",
+      "company": "NSF Research Experience for Undergraduates",
       "role": "Research Intern",
+      "startDate": "2023-05",
+      "endDate": "2023-08",
+      "responsibilities": [
+        "Conducted mathematical research in coding theory and combinatorics.",
+        "Applied discrete mathematics to theoretical and computational problems.",
+        "Designed algorithms and analyzed data structures for graph theory and error-correcting codes."
+      ],
+      "logoUrl": "",
+      "technologies": ["MATLAB", "LaTeX"],
+      "location": "",
+      "featured": true
+    },
+    {
+      "id": "lidron",
+      "company": "LIDRON Research Team",
+      "role": "Research Assistant",
       "startDate": "2024-05",
       "endDate": "Present",
       "responsibilities": [
-        "Developed RL algorithms for autonomous drone navigation",
-        "Implemented computer vision pipelines for obstacle detection",
-        "Optimized simulation environments for parallel training"
+        "Developed LiDAR-based autonomous landing algorithms for drones.",
+        "Implemented ROS-based navigation and perception systems.",
+        "Integrated embedded hardware and computer vision pipelines."
       ],
       "logoUrl": "",
-      "technologies": ["Python", "PyTorch", "ROS", "AirSim", "OpenCV"]
+      "technologies": ["Python", "ROS", "Raspberry Pi", "OpenCV"],
+      "location": "",
+      "featured": true
     }
   ]
 }
