@@ -1,0 +1,88 @@
+{
+  "projects": [
+    {
+      "id": "airsim-quadcopter",
+      "title": "AirSim Quadcopter RL",
+      "subtitle": "Autonomous Landing System",
+      "shortDescription": "Reinforcement learning model for autonomous quadcopter landing in AirSim simulation environment.",
+      "description": "Developed a deep reinforcement learning agent capable of autonomous quadcopter landing in complex environments. The system uses PPO (Proximal Policy Optimization) to learn stable landing behaviors through trial and error in Microsoft AirSim. Integrated with Unreal Engine for photo-realistic simulation and trained on diverse terrain conditions including moving platforms and adverse weather.\n\nKey achievements include 94% successful landing rate in testing, sub-0.5m landing accuracy, and real-time inference at 60 FPS. The model generalizes well to unseen environments and demonstrates robust performance in windy conditions.",
+      "roles": ["ML Engineer", "Simulation Developer"],
+      "technologies": [
+        "Python",
+        "PyTorch",
+        "AirSim",
+        "Unreal Engine",
+        "ROS",
+        "OpenCV"
+      ],
+      "date": "2024-08",
+      "images": [],
+      "videoUrl": "",
+      "liveUrl": "",
+      "repoUrl": "https://github.com/alex/airsim-rl",
+      "featured": true,
+      "colorAccent": "neonCyan"
+    },
+    {
+      "id": "unity-goblin-ai",
+      "title": "Unity Goblin AI",
+      "subtitle": "Enemy Behavior System",
+      "shortDescription": "Sophisticated enemy AI system featuring goblin archetypes with emergent tactical behaviors in Unity.",
+      "description": "Built a modular AI behavior system for goblin enemies using Unity DOTS (Data-Oriented Technology Stack) for high-performance simulation of 500+ agents simultaneously. Implemented hierarchical state machines, formation tactics, and perception systems.\n\nGoblins exhibit pack hunting behaviors, retreat strategies when outnumbered, and coordinate ambush tactics. The system uses influence maps for tactical positioning and includes patrol routes, alert states, and dynamic difficulty adjustment. Performance optimized using ECS architecture achieving 144 FPS with full AI computations.",
+      "roles": ["Game AI Developer", "Systems Programmer"],
+      "technologies": [
+        "C#",
+        "Unity",
+        "DOTS",
+        "ECS",
+        "Behavior Trees",
+        "NavMesh"
+      ],
+      "date": "2024-06",
+      "images": [],
+      "videoUrl": "",
+      "liveUrl": "",
+      "repoUrl": "https://github.com/alex/unity-goblin-ai",
+      "featured": true,
+      "colorAccent": "neonMagenta"
+    },
+    {
+      "id": "portfolio-tron",
+      "title": "Personal Portfolio",
+      "subtitle": "Tron Legacy Inspired",
+      "shortDescription": "This website showcasing projects and experience, built with modern web technologies and Tron aesthetic.",
+      "description": "Designed and developed a high-performance single-page portfolio featuring full-screen project cards with smooth scroll snapping and keyboard navigation. Implements a Tron Legacy inspired design system with crisp neon strokes, geometric precision, and subtle glow effects.\n\nTechnical highlights include lazy-loaded optimized images, accessibility-first keyboard navigation, CSS scroll snap for smooth transitions, and responsive layouts for all devices. Built with TypeScript for type safety and maintainability. Achieves perfect Lighthouse scores with sub-1s FCP and LCP under 2s.",
+      "roles": ["Full-Stack Developer", "UI/UX Designer"],
+      "technologies": [
+        "TypeScript",
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "date": "2025-01",
+      "images": [],
+      "videoUrl": "",
+      "liveUrl": "https://alex-portfolio.lovable.app",
+      "repoUrl": "https://github.com/alex/portfolio",
+      "featured": true,
+      "colorAccent": "neonBlue"
+    }
+  ],
+  "experiences": [
+    {
+      "id": "exp1",
+      "company": "Robotics Lab",
+      "role": "Research Intern",
+      "startDate": "2024-05",
+      "endDate": "Present",
+      "responsibilities": [
+        "Developed RL algorithms for autonomous drone navigation",
+        "Implemented computer vision pipelines for obstacle detection",
+        "Optimized simulation environments for parallel training"
+      ],
+      "logoUrl": "",
+      "technologies": ["Python", "PyTorch", "ROS", "AirSim", "OpenCV"]
+    }
+  ]
+}

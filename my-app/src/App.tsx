@@ -1,24 +1,27 @@
-// App.tsx
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "./components/ThemeProvider";
-import Index from "./pages/Index"; // Assumes Index.tsx is in a 'pages' folder
-import NotFound from "./pages/NotFound"; // Placeholder for a simple component
+import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
 
-// Simplified placeholder components for the files that were removed
-const BarebonesIndex = () => <Index />;
-const BarebonesNotFound = () => (
-  <div className="text-center p-10">404 - Not Found</div>
-);
+const queryClient = new QueryClient();
 
 const App = () => (
-  <ThemeProvider>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<BarebonesIndex />} />
-        <Route path="*" element={<BarebonesNotFound />} />
-      </Routes>
-    </BrowserRouter>
-  </ThemeProvider>
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
 );
 
 export default App;
