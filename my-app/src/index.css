@@ -8,8 +8,6 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Tron Legacy Inspired Design System - Dark theme with neon accents */
-
     /* Core backgrounds - Deep space black and panel blue */
     --background: 220 60% 3%; /* #03040A - Deep space black */
     --panel: 220 65% 8%; /* #071024 - Panel blue */
