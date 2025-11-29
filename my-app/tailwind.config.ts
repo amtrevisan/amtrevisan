@@ -14,26 +14,15 @@ export default {
     },
     extend: {
       colors: {
-        // Design System Colors
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "var(--color-primary)",
-          foreground: "var(--color-bg)",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
-        accent: {
-          DEFAULT: "var(--color-accent)",
-          foreground: "var(--color-text-primary)",
-        },
-        background: "var(--color-bg)",
-        foreground: "var(--color-text-primary)",
-        surface: "var(--color-surface)",
-        "surface-dark": "var(--color-surface-dark)",
-        "text-primary": "var(--color-text-primary)",
-        "text-secondary": "var(--color-text-secondary)",
-        link: "var(--color-link)",
-        border: "var(--color-border)",
-        error: "var(--color-error)",
-        success: "var(--color-success)",
-        // Legacy shadcn colors for compatibility
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -45,6 +34,10 @@ export default {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -65,47 +58,10 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
-      fontFamily: {
-        display: ["var(--font-display)", "sans-serif"],
-        body: ["var(--font-body)", "sans-serif"],
-        code: ["var(--font-code)", "monospace"],
-      },
-      fontSize: {
-        "h1": ["60px", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
-        "h2": ["36px", { lineHeight: "1.25", letterSpacing: "-0.01em" }],
-        "h3": ["28px", { lineHeight: "1.3" }],
-        "body": ["18px", { lineHeight: "1.6" }],
-        "body-sm": ["16px", { lineHeight: "1.5" }],
-        "caption": ["14px", { lineHeight: "1.4", letterSpacing: "0.01em" }],
-        "code": ["16px", { lineHeight: "1.5" }],
-      },
-      spacing: {
-        "2xs": "var(--space-2xs)",
-        "xs": "var(--space-xs)",
-        "sm": "var(--space-sm)",
-        "md": "var(--space-md)",
-        "lg": "var(--space-lg)",
-        "xl": "var(--space-xl)",
-        "2xl": "var(--space-2xl)",
-      },
       borderRadius: {
-        "md": "var(--radius-md)",
-        "lg": "var(--radius-lg)",
-        // Legacy shadcn support
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-      },
-      boxShadow: {
-        "sm": "var(--shadow-sm)",
-        "md": "var(--shadow-md)",
-        "lg": "var(--shadow-lg)",
-        "xl": "var(--shadow-xl)",
-      },
-      transitionDuration: {
-        "fast": "var(--transition-fast)",
-        "normal": "var(--transition-normal)",
-        "slow": "var(--transition-slow)",
       },
       keyframes: {
         "accordion-down": {
@@ -124,57 +80,10 @@ export default {
             height: "0",
           },
         },
-        "fade-in-up": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(20px)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
-        },
-        "fade-in": {
-          "0%": {
-            opacity: "0",
-          },
-          "100%": {
-            opacity: "1",
-          },
-        },
-        "float": {
-          "0%, 100%": {
-            transform: "translateY(0)",
-          },
-          "50%": {
-            transform: "translateY(-10px)",
-          },
-        },
-        "glow": {
-          "0%, 100%": {
-            opacity: "1",
-          },
-          "50%": {
-            opacity: "0.5",
-          },
-        },
-        "bounce-subtle": {
-          "0%, 100%": {
-            transform: "translateY(0)",
-          },
-          "50%": {
-            transform: "translateY(-5px)",
-          },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in-up": "fade-in-up 0.6s ease-out",
-        "fade-in": "fade-in 0.6s ease-out",
-        "float": "float 3s ease-in-out infinite",
-        "glow": "glow 2s ease-in-out infinite",
-        "bounce-subtle": "bounce-subtle 2s ease-in-out infinite",
       },
     },
   },
