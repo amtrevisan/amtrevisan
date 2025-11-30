@@ -1,4 +1,5 @@
 import LogoLoop from "./LogoLoop";
+import GradualBlur from "./GradualBlur";
 
 const skills = [
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", alt: "HTML" },
@@ -50,6 +51,19 @@ const AboutSection = () => {
           </p>
         </div>
       </div>
+
+      {/* Gradual Blur Effect at Bottom */}
+      <GradualBlur
+        position="bottom"
+        height="8rem"
+        strength={2}
+        divCount={6}
+        opacity={0.7}
+        curve="ease-out"
+        animated={true}
+        duration="0.5s"
+        preset="smooth"
+      />
     </section>
   );
 };
