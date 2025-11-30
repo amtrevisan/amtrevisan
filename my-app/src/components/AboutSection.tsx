@@ -20,7 +20,7 @@ const skills = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="relative min-h-screen bg-secondary flex items-center py-16 px-16 overflow-hidden">
+    <section id="about" className="relative min-h-[70vh] bg-secondary flex items-center py-16 px-8 overflow-hidden w-full">
       {/* Background texture */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -28,29 +28,29 @@ const AboutSection = () => {
         }}></div>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto">
-        <h2 className="text-5xl font-bold text-accent mb-8 tracking-tight">About Me</h2>
+      <div className="relative z-10 w-full max-w-7xl mx-auto">
+        <h2 className="text-5xl font-bold text-accent mb-12 tracking-tight text-center">About Me</h2>
 
         {/* Skills Loop */}
-        <div className="mb-8">
+        <div className="mb-16">
           <LogoLoop
             logos={skills}
-            speed={60}
-            logoHeight={32}
-            gap={24}
+            speed={40}
+            logoHeight={48}
+            gap={60}
             pauseOnHover={true}
-            className="w-full"
+            className="w-full [&_img]:filter [&_img]:sepia [&_img]:hue-rotate-[25deg] [&_img]:saturate-[0.8] [&_img]:brightness-[0.9]"
           />
         </div>
 
-        <div className="space-y-5">
-          <p className="text-lg text-muted-foreground leading-relaxed">
+        <div className="max-w-4xl mx-auto space-y-6 text-center">
+          <p className="text-xl text-muted-foreground leading-relaxed">
             I am a third year Computer Science and Engineering student at the University of Puerto Rico Mayagüez. I am born and raised here in Puerto Rico and I speak Spanish, English, and Portuguese fluently.
           </p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-xl text-muted-foreground leading-relaxed">
             I love building mobile and web apps and I am currently looking for software engineering internship opportunities to expand my skillset in all areas. I have worked with several programming languages, tools, and frameworks that you can explore throughout the rest of this portfolio.
           </p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-xl text-muted-foreground leading-relaxed">
             Outside of tech I like watching mind bending movies, listening to rock music, skateboarding, and spending time in nature.
           </p>
         </div>
