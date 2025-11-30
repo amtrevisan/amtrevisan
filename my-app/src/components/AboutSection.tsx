@@ -40,19 +40,13 @@ const AboutSection = () => {
             logoHeight={48}
             gap={60}
             pauseOnHover={true}
-            className="w-full [&_img]:filter [&_img]:sepia [&_img]:hue-rotate-[15deg] [&_img]:saturate-[1.2] [&_img]:brightness-[0.7]"
+            className="w-full"
           />
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-6 text-center">
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            I am a third year Computer Science and Engineering student at the University of Puerto Rico Mayagüez. I am born and raised here in Puerto Rico and I speak Spanish, English, and Portuguese fluently.
-          </p>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            I love building mobile and web apps and I am currently looking for software engineering internship opportunities to expand my skillset in all areas. I have worked with several programming languages, tools, and frameworks that you can explore throughout the rest of this portfolio.
-          </p>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Outside of tech I like watching mind bending movies, listening to rock music, skateboarding, and spending time in nature.
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-2xl text-muted-foreground leading-relaxed">
+            I am a third year Computer Science and Engineering student at the University of Puerto Rico Mayagüez. I am born and raised here in Puerto Rico and I speak Spanish, English, and Portuguese fluently. I love building mobile and web apps and I am currently looking for software engineering internship opportunities to expand my skillset in all areas. I have worked with several programming languages, tools, and frameworks that you can explore throughout the rest of this portfolio. Outside of tech I like watching mind bending movies, listening to rock music, skateboarding, and spending time in nature.
           </p>
         </div>
       </div>
