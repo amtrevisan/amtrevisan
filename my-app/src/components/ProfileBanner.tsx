@@ -12,7 +12,11 @@ const ProfileBanner = () => {
 
       {/* Profile Picture - Full Left Side */}
       <div className="relative z-10 w-1/2 h-full bg-secondary/30 border-r-2 border-accent/20 flex items-center justify-center">
-        <span className="text-accent/50 text-xl font-medium">Profile Picture</span>
+        <img
+          src="/ProfilePhoto.jpeg"
+          alt="Alex Morales Trevisan"
+          className="w-full h-full object-cover"
+        />
       </div>
 
       {/* Info Section - Full Right Side */}
@@ -24,7 +28,12 @@ const ProfileBanner = () => {
         {/* Location */}
         <div className="flex items-center gap-2 mb-8">
           <MapPin className="w-5 h-5 text-accent" />
-          <span className="text-accent text-lg font-medium">Mayagüez, Puerto Rico 🇵🇷</span>
+          <span className="text-accent text-lg font-medium">Mayagüez, Puerto Rico</span>
+          <img
+            src="/Flag_of_Puerto_Rico.svg"
+            alt="Puerto Rico Flag"
+            className="w-6 h-4 inline-block ml-1"
+          />
         </div>
 
         {/* Social Badges */}
@@ -39,8 +48,8 @@ const ProfileBanner = () => {
           </a>
 
           {/* LinkedIn Badge */}
-          <a 
-            href="#"
+          <a
+            href="https://www.linkedin.com/in/alex-morales-dev/"
             target="_blank"
             rel="noopener noreferrer"
             className="backdrop-blur-sm bg-secondary/20 border border-accent/30 p-3 flex items-center justify-center transition-all hover:bg-secondary/30 hover:border-accent/50 w-12 h-12"
@@ -49,8 +58,8 @@ const ProfileBanner = () => {
           </a>
 
           {/* GitHub Badge */}
-          <a 
-            href="#"
+          <a
+            href="https://github.com/amtrevisan"
             target="_blank"
             rel="noopener noreferrer"
             className="backdrop-blur-sm bg-secondary/20 border border-accent/30 p-3 flex items-center justify-center transition-all hover:bg-secondary/30 hover:border-accent/50 w-12 h-12"
