@@ -12,18 +12,13 @@ const AboutSection = () => {
         <h2 className="text-5xl font-bold text-accent mb-8 tracking-tight">About Me</h2>
         <div className="space-y-5">
           <p className="text-lg text-muted-foreground leading-relaxed">
-            I am a passionate professional dedicated to creating meaningful experiences through thoughtful design 
-            and innovative solutions. With a deep commitment to excellence and continuous learning, I strive to 
-            push boundaries and deliver exceptional results.
+            I am a third year Computer Science and Engineering student at the University of Puerto Rico Mayagüez. I am born and raised here in Puerto Rico and I speak Spanish, English, and Portuguese fluently.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            My approach combines technical expertise with creative problem-solving, always keeping the end user 
-            at the center of everything I do. I believe in the power of collaboration and the importance of 
-            building systems that are both beautiful and functional.
+            I love building mobile and web apps and I am currently looking for software engineering internship opportunities to expand my skillset in all areas. I have worked with several programming languages, tools, and frameworks that you can explore throughout the rest of this portfolio.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            When I'm not working, I enjoy exploring new technologies, contributing to open-source projects, 
-            and staying up-to-date with the latest industry trends and best practices.
+            Outside of tech I like watching mind bending movies, listening to rock music, skateboarding, and spending time in nature.
           </p>
         </div>
       </div>
