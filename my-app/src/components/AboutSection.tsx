@@ -51,19 +51,6 @@ const AboutSection = () => {
           </p>
         </div>
       </div>
-
-      {/* Gradual Blur Effect at Bottom */}
-      <GradualBlur
-        position="bottom"
-        height="8rem"
-        strength={2}
-        divCount={6}
-        opacity={0.7}
-        curve="ease-out"
-        animated={true}
-        duration="0.5s"
-        preset="smooth"
-      />
     </section>
   );
 };
