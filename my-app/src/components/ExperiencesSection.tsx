@@ -1,30 +1,40 @@
 const experiences = [
   {
     id: 1,
+    title: "LIDRON Research Team member",
+    company: "University of Puerto Rico Mayagüez",
+    period: "August 2025 - Present",
+    skills: ["C++", "ROS", "RaspberryPI", "Embedded Systems"],
+    description: "Developing an autonomous landing algorithm using ROS2, with C++ for flight control and landing logic and Python for a reinforcement learning model. Collecting and cleaning sensor data, including LiDAR point clouds, from onboard microcontrollers to train the RL model, integrating embedded systems and sensors for real-time perception, mapping, and control.",
+    imagePlaceholder: "/Lidron.jpg",
+    projectLink: "https://www.uprm.edu/cps-iot/lidron/"
+  },
+  {
+    id: 2,
     title: "Senior Software Engineer",
     company: "Tech Innovation Corp",
     period: "2021 - Present",
     skills: ["React", "TypeScript", "Node.js", "AWS", "PostgreSQL"],
     description: "Leading the development of scalable web applications and mentoring junior developers. Architected and implemented a microservices infrastructure that improved system reliability by 40%. Collaborated with cross-functional teams to deliver high-impact features.",
-    imagePlaceholder: "Experience Image 1"
+    imagePlaceholder: "Experience Image 2"
   },
   {
-    id: 2,
+    id: 3,
     title: "Full Stack Developer",
     company: "Digital Solutions Inc",
     period: "2019 - 2021",
     skills: ["JavaScript", "Python", "Django", "React", "Docker"],
     description: "Developed and maintained multiple client-facing applications serving thousands of users. Implemented CI/CD pipelines that reduced deployment time by 60%. Worked closely with designers to create intuitive user interfaces.",
-    imagePlaceholder: "Experience Image 2"
+    imagePlaceholder: "Experience Image 3"
   },
   {
-    id: 3,
+    id: 4,
     title: "Junior Developer",
     company: "Startup Ventures",
     period: "2018 - 2019",
     skills: ["HTML", "CSS", "JavaScript", "Git", "Agile"],
     description: "Contributed to the development of the company's core product from the ground up. Participated in daily stand-ups and sprint planning sessions. Gained valuable experience in full software development lifecycle.",
-    imagePlaceholder: "Experience Image 3"
+    imagePlaceholder: "Experience Image 4"
   }
 ];
 
@@ -55,7 +65,15 @@ const ExperiencesSection = () => {
           <div className={`relative z-10 w-1/2 h-full bg-secondary/30 border-accent/20 flex items-center justify-center ${
             index % 2 === 0 ? "border-r-2" : "border-l-2 order-2"
           }`}>
-            <span className="text-accent/50 text-xl font-medium">{exp.imagePlaceholder}</span>
+            {exp.imagePlaceholder.startsWith('/') ? (
+              <img
+                src={exp.imagePlaceholder}
+                alt={`${exp.title} - ${exp.company}`}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <span className="text-accent/50 text-xl font-medium">{exp.imagePlaceholder}</span>
+            )}
           </div>
 
           {/* Content Section - Full Half */}
