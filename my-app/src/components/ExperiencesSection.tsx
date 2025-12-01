@@ -1,11 +1,11 @@
 const experiences = [
   {
     id: 1,
-    title: "LIDRON Research Team member",
-    company: "University of Puerto Rico Mayagüez",
+    title: "Researcher",
+    company: "Team Lidron",
     period: "August 2025 - Present",
-    skills: ["C++", "ROS", "RaspberryPI", "Embedded Systems"],
-    description: "Developing an autonomous landing algorithm using ROS2, with C++ for flight control and landing logic and Python for a reinforcement learning model. Collecting and cleaning sensor data, including LiDAR point clouds, from onboard microcontrollers to train the RL model, integrating embedded systems and sensors for real-time perception, mapping, and control.",
+    skills: ["Python", "C++", "ROS", "RaspberryPI", "Embedded Systems"],
+    description: "Contributing to the development of autonomous landing solutions for LiDAR-equipped drones, focusing on perception, control, and navigation systems. Designing and implementing software modules using Python and ROS (Robot Operating System) for real-time sensor data processing and system integration. Working with embedded systems to ensure reliable communication and performance between onboard sensors and flight controllers. Collaborating with a multidisciplinary team to test, validate, and optimize landing algorithms in both simulated and real-world environments.",
     imagePlaceholder: "/Lidron.png",
     projectLink: "https://www.uprm.edu/cps-iot/lidron/"
   },
