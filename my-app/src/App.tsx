@@ -14,23 +14,28 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <ClickSpark
-        sparkColor="hsl(var(--accent))"
-        sparkSize={8}
-        sparkRadius={30}
-        sparkCount={8}
-        duration={600}
-        easing="ease-out"
-        extraScale={1.2}
-      >
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </ClickSpark>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+
+      {/* Click Spark Overlay */}
+      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 9999 }}>
+        <ClickSpark
+          sparkColor="hsl(var(--accent))"
+          sparkSize={8}
+          sparkRadius={30}
+          sparkCount={8}
+          duration={600}
+          easing="ease-out"
+          extraScale={1.2}
+        >
+          <div className="w-full h-full" />
+        </ClickSpark>
+      </div>
     </TooltipProvider>
   </QueryClientProvider>
 );

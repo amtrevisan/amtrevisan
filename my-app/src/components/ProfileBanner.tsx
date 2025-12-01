@@ -21,6 +21,9 @@ const ProfileBanner = () => {
 
       {/* Info Section - Full Right Side */}
       <div className="relative z-10 w-1/2 h-full flex flex-col justify-center px-16">
+        <div className="mb-8">
+          <h2 className="text-2xl font-semibold text-accent/80 mb-2 tracking-wide">PROFILE</h2>
+        </div>
         <h1 className="text-7xl font-bold text-accent mb-6 tracking-tight leading-tight">
           Alex Morales<br />Trevisan
         </h1>
