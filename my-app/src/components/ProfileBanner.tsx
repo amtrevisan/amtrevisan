@@ -2,7 +2,7 @@ import { Mail, Linkedin, Github, MapPin } from "lucide-react";
 
 const ProfileBanner = () => {
   return (
-    <section className="relative w-full h-screen flex bg-primary overflow-hidden">
+    <section id="profile" className="relative w-full h-screen flex bg-primary overflow-hidden">
       {/* Background texture */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{

@@ -17,7 +17,7 @@ const StickyNavigation = ({ onNavigate, activeSection }: StickyNavigationProps) 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const sections = ["About", "Experiences", "Projects"];
+  const sections = ["Profile", "About", "Experiences", "Projects"];
 
   return (
     <nav
