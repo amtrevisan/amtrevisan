@@ -1,5 +1,4 @@
 import LogoLoop from "./LogoLoop";
-import GradualBlur from "./GradualBlur";
 
 const skills = [
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", alt: "HTML" },
