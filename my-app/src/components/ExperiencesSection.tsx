@@ -11,30 +11,39 @@ const experiences = [
   },
   {
     id: 2,
+    title: "NSF Research Experience for Undergraduates",
+    company: "University of Puerto Rico Mayagüez",
+    period: "May - August 2023",
+    skills: ["MATLAB", "LATEX"],
+    description: "Conducted mathematical research in coding theory and combinatorics, applying discrete mathematics to solve theoretical and computational problems. Collaborated with faculty mentors and peers to design algorithms and analyze data structures. Developed analytical and problem-solving skills through projects in graph theory and error-correcting codes, relevant to software reliability and cryptography.",
+    imagePlaceholder: "/nsf.png"
+  },
+  {
+    id: 3,
     title: "Senior Software Engineer",
     company: "Tech Innovation Corp",
     period: "2021 - Present",
     skills: ["React", "TypeScript", "Node.js", "AWS", "PostgreSQL"],
     description: "Leading the development of scalable web applications and mentoring junior developers. Architected and implemented a microservices infrastructure that improved system reliability by 40%. Collaborated with cross-functional teams to deliver high-impact features.",
-    imagePlaceholder: "Experience Image 2"
+    imagePlaceholder: "Experience Image 3"
   },
   {
-    id: 3,
+    id: 4,
     title: "Full Stack Developer",
     company: "Digital Solutions Inc",
     period: "2019 - 2021",
     skills: ["JavaScript", "Python", "Django", "React", "Docker"],
     description: "Developed and maintained multiple client-facing applications serving thousands of users. Implemented CI/CD pipelines that reduced deployment time by 60%. Worked closely with designers to create intuitive user interfaces.",
-    imagePlaceholder: "Experience Image 3"
+    imagePlaceholder: "Experience Image 4"
   },
   {
-    id: 4,
+    id: 5,
     title: "Junior Developer",
     company: "Startup Ventures",
     period: "2018 - 2019",
     skills: ["HTML", "CSS", "JavaScript", "Git", "Agile"],
     description: "Contributed to the development of the company's core product from the ground up. Participated in daily stand-ups and sprint planning sessions. Gained valuable experience in full software development lifecycle.",
-    imagePlaceholder: "Experience Image 4"
+    imagePlaceholder: "Experience Image 5"
   }
 ];
 
