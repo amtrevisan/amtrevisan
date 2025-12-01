@@ -23,7 +23,7 @@ const App = () => (
       </BrowserRouter>
 
       {/* Click Spark Overlay */}
-      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 9999 }}>
+      <div className="fixed inset-0" style={{ zIndex: 9999 }}>
         <ClickSpark
           sparkColor="hsl(var(--accent))"
           sparkSize={8}
@@ -33,7 +33,7 @@ const App = () => (
           easing="ease-out"
           extraScale={1.2}
         >
-          <div className="w-full h-full" />
+          <div className="w-full h-full cursor-pointer" />
         </ClickSpark>
       </div>
     </TooltipProvider>
