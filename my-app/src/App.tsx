@@ -14,6 +14,15 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+
+      {/* Global Click Spark Overlay */}
       <ClickSpark
         sparkColor="#fbbf24"
         sparkSize={10}
@@ -21,13 +30,10 @@ const App = () => (
         sparkCount={8}
         duration={400}
       >
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
+        <div
+          className="fixed inset-0 pointer-events-none"
+          style={{ zIndex: 9999 }}
+        />
       </ClickSpark>
     </TooltipProvider>
   </QueryClientProvider>

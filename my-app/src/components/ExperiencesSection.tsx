@@ -6,7 +6,7 @@ const experiences = [
     period: "August 2025 - Present",
     skills: ["C++", "ROS", "RaspberryPI", "Embedded Systems"],
     description: "Developing an autonomous landing algorithm using ROS2, with C++ for flight control and landing logic and Python for a reinforcement learning model. Collecting and cleaning sensor data, including LiDAR point clouds, from onboard microcontrollers to train the RL model, integrating embedded systems and sensors for real-time perception, mapping, and control.",
-    imagePlaceholder: "/Lidron.jpg",
+    imagePlaceholder: "/Lidron.png",
     projectLink: "https://www.uprm.edu/cps-iot/lidron/"
   },
   {
