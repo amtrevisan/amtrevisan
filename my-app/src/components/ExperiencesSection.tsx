@@ -32,9 +32,11 @@ const ExperiencesSection = () => {
   return (
     <section id="experiences" className="relative">
       {/* Section Header */}
-      <div className="text-center py-12">
-        <h2 className="text-4xl font-bold text-accent mb-4 tracking-tight">EXPERIENCES</h2>
-        <div className="w-24 h-1 bg-accent/50 mx-auto"></div>
+      <div className="flex justify-start py-12">
+        <div className="text-left">
+          <h2 className="text-4xl font-bold text-accent mb-4 tracking-tight">EXPERIENCES</h2>
+          <div className="w-24 h-1 bg-accent/50"></div>
+        </div>
       </div>
 
       {experiences.map((exp, index) => (

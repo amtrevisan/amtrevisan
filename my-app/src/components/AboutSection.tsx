@@ -30,7 +30,9 @@ const AboutSection = () => {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto">
-        <h2 className="text-5xl font-bold text-accent mb-12 tracking-tight text-center">About Me</h2>
+        <div className="flex justify-end mb-12">
+          <h2 className="text-5xl font-bold text-accent tracking-tight">About Me</h2>
+        </div>
 
         {/* Skills Loop */}
         <div className="mb-16">
