@@ -11,25 +11,27 @@ const ProfileBanner = () => {
       </div>
 
       {/* Profile Picture - Half Left Side */}
-      <div className="relative z-10 w-1/2 h-full bg-secondary/30 border-r-2 border-accent/20 flex items-center justify-center overflow-visible">
+      <div className="relative z-10 w-1/2 h-full bg-secondary/30 border-r-2 border-accent/20 flex items-center justify-center">
         <img
           src="/ProfilePhoto.jpeg"
           alt="Alex Morales Trevisan"
           className="w-full h-full object-cover"
         />
-        {/* Puerto Rico Flag - Top Right */}
-        <img
-          src="/Flag_of_Puerto_Rico.svg"
-          alt="Puerto Rico Flag"
-          className="absolute top-4 right-4 w-20 h-20 drop-shadow-lg"
-        />
-        {/* Coqui Sticker - Bottom Right (1.5x bigger) */}
-        <img
-          src="/coqui.svg"
-          alt="Coqui Frog - Puerto Rico Symbol"
-          className="absolute bottom-4 right-4 w-30 h-30 opacity-90 drop-shadow-lg"
-        />
       </div>
+
+      {/* Independent Sticker Overlays */}
+      {/* Puerto Rico Flag - Center Screen (Half In/Out) */}
+      <img
+        src="/Flag_of_Puerto_Rico.svg"
+        alt="Puerto Rico Flag"
+        className="absolute top-8 left-1/2 -translate-x-1/2 z-20 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 drop-shadow-lg"
+      />
+      {/* Coqui Sticker - Center Screen (Half In/Out, 1.5x bigger) */}
+      <img
+        src="/coqui.svg"
+        alt="Coqui Frog - Puerto Rico Symbol"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 w-24 h-24 sm:w-30 sm:h-30 md:w-36 md:h-36 opacity-90 drop-shadow-lg"
+      />
 
       {/* Info Section - Half Right Side */}
       <div className="relative z-10 w-1/2 h-full flex flex-col justify-center px-16">
