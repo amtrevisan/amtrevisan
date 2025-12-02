@@ -11,17 +11,23 @@ const ProfileBanner = () => {
       </div>
 
       {/* Profile Picture - Half Left Side */}
-      <div className="relative z-10 w-1/2 h-full bg-secondary/30 border-r-2 border-accent/20 flex items-center justify-center">
+      <div className="relative z-10 w-1/2 h-full bg-secondary/30 border-r-2 border-accent/20 flex items-center justify-center overflow-visible">
         <img
           src="/ProfilePhoto.jpeg"
           alt="Alex Morales Trevisan"
           className="w-full h-full object-cover"
         />
-        {/* Coqui Sticker */}
+        {/* Puerto Rico Flag - Top Right (Half Out) */}
+        <img
+          src="/Flag_of_Puerto_Rico.svg"
+          alt="Puerto Rico Flag"
+          className="absolute -top-2 -right-2 w-20 h-16 drop-shadow-lg"
+        />
+        {/* Coqui Sticker - Bottom Right (Half Out) */}
         <img
           src="/coqui.svg"
           alt="Coqui Frog - Puerto Rico Symbol"
-          className="absolute bottom-4 right-4 w-16 h-16 opacity-80"
+          className="absolute -bottom-2 -right-2 w-24 h-24 opacity-90 drop-shadow-lg"
         />
       </div>
 
@@ -35,11 +41,6 @@ const ProfileBanner = () => {
         <div className="flex items-center gap-2 mb-8">
           <MapPin className="w-5 h-5 text-accent" />
           <span className="text-accent text-lg font-medium">Mayagüez, Puerto Rico</span>
-          <img
-            src="/Flag_of_Puerto_Rico.svg"
-            alt="Puerto Rico Flag"
-            className="w-6 h-4 inline-block ml-1"
-          />
         </div>
 
         {/* Social Badges */}
