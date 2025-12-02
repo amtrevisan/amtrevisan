@@ -40,9 +40,9 @@ const ProjectsSection = () => {
       </div>
 
       {projects.map((project, index) => (
-        <div 
+        <div
           key={project.id}
-          className={`relative h-screen flex overflow-hidden ${
+          className={`relative min-h-screen md:h-screen flex flex-col md:flex-row overflow-hidden ${
             index % 2 === 0 ? "bg-secondary" : "bg-primary"
           }`}
         >
@@ -53,42 +53,42 @@ const ProjectsSection = () => {
             }}></div>
           </div>
 
-          {/* Image Section - Full Half */}
-          <div className={`relative z-10 w-1/2 h-full bg-secondary/30 border-accent/20 flex items-center justify-center ${
-            index % 2 === 0 ? "border-r-2" : "border-l-2 order-2"
+          {/* Image Section - Full width on mobile, half on desktop */}
+          <div className={`relative z-10 w-full md:w-1/2 h-64 md:h-full bg-secondary/30 border-b-2 md:border-b-0 border-accent/20 md:border-r-2 flex items-center justify-center ${
+            index % 2 === 0 ? "md:border-r-2" : "md:border-l-2 md:order-2"
           }`}>
-            <span className="text-accent/50 text-xl font-medium">{project.imagePlaceholder}</span>
+            <span className="text-accent/50 text-lg md:text-xl font-medium">{project.imagePlaceholder}</span>
           </div>
 
-          {/* Content Section - Full Half */}
-          <div className={`relative z-10 w-1/2 h-full flex flex-col justify-center px-16 ${
-            index % 2 === 0 ? "" : "order-1"
+          {/* Content Section - Full width on mobile, half on desktop */}
+          <div className={`relative z-10 w-full md:w-1/2 min-h-96 md:h-full flex flex-col justify-center px-6 md:px-16 py-8 md:py-0 ${
+            index % 2 === 0 ? "" : "md:order-1"
           }`}>
-            <div className="space-y-8">
-              <h3 className="text-4xl font-bold text-accent">{project.title}</h3>
+            <div className="space-y-6 md:space-y-8">
+              <h3 className="text-2xl md:text-4xl font-bold text-accent">{project.title}</h3>
 
               <div className="flex flex-wrap gap-2">
                 {project.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 bg-secondary/30 border border-accent/20 text-accent text-sm font-medium"
+                    className="px-2 md:px-3 py-1 md:py-1.5 bg-secondary/30 border border-accent/20 text-accent text-xs md:text-sm font-medium"
                   >
                     {skill}
                   </span>
                 ))}
               </div>
 
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                 {project.description}
               </p>
 
               {/* Project Links */}
-              <div className="flex gap-3 pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <a
                   href={project.projectLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="backdrop-blur-sm bg-accent/20 border border-accent/30 px-4 py-2.5 flex items-center gap-2 transition-all hover:bg-accent/30 hover:border-accent/50"
+                  className="backdrop-blur-sm bg-accent/20 border border-accent/30 px-4 py-2.5 flex items-center justify-center gap-2 transition-all hover:bg-accent/30 hover:border-accent/50"
                 >
                   <ExternalLink className="w-4 h-4 text-accent" />
                   <span className="text-accent text-sm font-medium">View Project</span>
@@ -98,7 +98,7 @@ const ProjectsSection = () => {
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="backdrop-blur-sm bg-accent/20 border border-accent/30 px-4 py-2.5 flex items-center gap-2 transition-all hover:bg-accent/30 hover:border-accent/50"
+                  className="backdrop-blur-sm bg-accent/20 border border-accent/30 px-4 py-2.5 flex items-center justify-center gap-2 transition-all hover:bg-accent/30 hover:border-accent/50"
                 >
                   <Github className="w-4 h-4 text-accent" />
                   <span className="text-accent text-sm font-medium">GitHub</span>

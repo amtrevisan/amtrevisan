@@ -2,7 +2,7 @@ import { Mail, Linkedin, Github, MapPin } from "lucide-react";
 
 const ProfileBanner = () => {
   return (
-    <section id="profile" className="relative w-full h-screen flex bg-primary overflow-hidden">
+    <section id="profile" className="relative w-full min-h-screen flex flex-col md:flex-row bg-primary overflow-hidden">
       {/* Background texture */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -10,52 +10,68 @@ const ProfileBanner = () => {
         }}></div>
       </div>
 
-      {/* Profile Picture - Half Left Side */}
-      <div className="relative z-10 w-1/2 h-full bg-secondary/30 border-r-2 border-accent/20 flex items-center justify-center">
+      {/* Profile Picture - Top on mobile, left on desktop */}
+      <div className="relative z-10 w-full md:w-1/2 h-96 md:h-full bg-secondary/30 border-b-2 md:border-b-0 md:border-r-2 border-accent/20 flex items-center justify-center">
         <img
           src="/ProfilePhoto.jpeg"
           alt="Alex Morales Trevisan"
           className="w-full h-full object-cover"
         />
+
+        {/* Mobile Stickers - Different positioning for mobile */}
+        {/* Puerto Rico Flag - Mobile: Top Left */}
+        <div className="absolute top-4 left-4 z-20 w-12 h-12 md:hidden p-0.5 bg-white rounded-lg shadow-lg">
+          <img
+            src="/Flag_of_Puerto_Rico.svg"
+            alt="Puerto Rico Flag"
+            className="w-full h-full rounded-md"
+          />
+        </div>
+        {/* Coqui Sticker - Mobile: Top Right */}
+        <img
+          src="/coqui.svg"
+          alt="Coqui Frog - Puerto Rico Symbol"
+          className="absolute top-4 right-4 z-20 w-16 h-16 md:hidden opacity-90 drop-shadow-lg"
+        />
       </div>
 
-      {/* Independent Sticker Overlays */}
-      {/* Puerto Rico Flag - Center Screen (Half In/Out) */}
-      <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20 w-18 h-18 sm:w-22 sm:h-22 md:w-26 md:h-26 p-0.5 bg-white rounded-lg shadow-lg">
+      {/* Desktop Sticker Overlays */}
+      {/* Puerto Rico Flag - Desktop: Center Screen (Half In/Out) */}
+      <div className="hidden md:block absolute top-8 left-1/2 -translate-x-1/2 z-20 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 p-0.5 bg-white rounded-lg shadow-lg">
         <img
           src="/Flag_of_Puerto_Rico.svg"
           alt="Puerto Rico Flag"
           className="w-full h-full rounded-md"
         />
       </div>
-      {/* Coqui Sticker - Center Screen (Half In/Out, 1.5x bigger) */}
+      {/* Coqui Sticker - Desktop: Center Screen (Half In/Out, 1.5x bigger) */}
       <img
         src="/coqui.svg"
         alt="Coqui Frog - Puerto Rico Symbol"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 w-26 h-26 sm:w-33 sm:h-33 md:w-40 md:h-40 opacity-90 drop-shadow-lg"
+        className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 z-20 w-26 h-26 sm:w-33 sm:h-33 md:w-40 md:h-40 opacity-90 drop-shadow-lg"
       />
 
-      {/* Info Section - Half Right Side */}
-      <div className="relative z-10 w-1/2 h-full flex flex-col justify-center px-16">
-        <h1 className="text-7xl font-bold text-accent mb-6 tracking-tight leading-tight">
+      {/* Info Section - Bottom on mobile, right on desktop */}
+      <div className="relative z-10 w-full md:w-1/2 min-h-96 md:h-full flex flex-col justify-center px-8 md:px-16 py-8 md:py-0">
+        <h1 className="text-4xl md:text-7xl font-bold text-accent mb-4 md:mb-6 tracking-tight leading-tight">
           Alex Morales<br />Trevisan
         </h1>
 
         {/* Location */}
-        <div className="flex items-center gap-2 mb-8">
-          <MapPin className="w-5 h-5 text-accent" />
-          <span className="text-accent text-lg font-medium">Mayagüez, Puerto Rico</span>
+        <div className="flex items-center gap-2 mb-6 md:mb-8">
+          <MapPin className="w-4 h-4 md:w-5 md:h-5 text-accent" />
+          <span className="text-accent text-base md:text-lg font-medium">Mayagüez, Puerto Rico</span>
         </div>
 
         {/* Social Badges */}
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2 md:gap-3">
           {/* Email Badge */}
-          <a 
+          <a
             href="mailto:alex.morales8@upr.edu"
-            className="backdrop-blur-sm bg-secondary/20 border border-accent/30 px-5 py-2.5 flex items-center gap-2.5 transition-all hover:bg-secondary/30 hover:border-accent/50"
+            className="backdrop-blur-sm bg-secondary/20 border border-accent/30 px-3 md:px-5 py-2 md:py-2.5 flex items-center gap-2 md:gap-2.5 transition-all hover:bg-secondary/30 hover:border-accent/50 text-xs md:text-sm"
           >
-            <Mail className="w-4 h-4 text-accent" />
-            <span className="text-accent text-sm font-medium">alex.morales8@upr.edu</span>
+            <Mail className="w-3 h-3 md:w-4 md:h-4 text-accent" />
+            <span className="text-accent font-medium">alex.morales8@upr.edu</span>
           </a>
 
           {/* LinkedIn Badge */}
@@ -63,9 +79,9 @@ const ProfileBanner = () => {
             href="https://www.linkedin.com/in/alex-morales-dev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="backdrop-blur-sm bg-secondary/20 border border-accent/30 p-3 flex items-center justify-center transition-all hover:bg-secondary/30 hover:border-accent/50 w-12 h-12"
+            className="backdrop-blur-sm bg-secondary/20 border border-accent/30 p-2 md:p-3 flex items-center justify-center transition-all hover:bg-secondary/30 hover:border-accent/50 w-10 h-10 md:w-12 md:h-12"
           >
-            <Linkedin className="w-5 h-5 text-accent" />
+            <Linkedin className="w-4 h-4 md:w-5 md:h-5 text-accent" />
           </a>
 
           {/* GitHub Badge */}
@@ -73,9 +89,9 @@ const ProfileBanner = () => {
             href="https://github.com/amtrevisan"
             target="_blank"
             rel="noopener noreferrer"
-            className="backdrop-blur-sm bg-secondary/20 border border-accent/30 p-3 flex items-center justify-center transition-all hover:bg-secondary/30 hover:border-accent/50 w-12 h-12"
+            className="backdrop-blur-sm bg-secondary/20 border border-accent/30 p-2 md:p-3 flex items-center justify-center transition-all hover:bg-secondary/30 hover:border-accent/50 w-10 h-10 md:w-12 md:h-12"
           >
-            <Github className="w-5 h-5 text-accent" />
+            <Github className="w-4 h-4 md:w-5 md:h-5 text-accent" />
           </a>
         </div>
       </div>
