@@ -78,7 +78,7 @@ const ExperiencesSection = () => {
               <img
                 src={exp.imagePlaceholder}
                 alt={`${exp.title} - ${exp.company}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             ) : (
               <span className="text-accent/50 text-xl font-medium">{exp.imagePlaceholder}</span>
