@@ -64,12 +64,12 @@ const ProjectsSection = () => {
           <div className={`relative z-10 w-1/2 h-full flex flex-col justify-center px-16 ${
             index % 2 === 0 ? "" : "order-1"
           }`}>
-            <div className="space-y-4">
+            <div className="space-y-8">
               <h3 className="text-4xl font-bold text-accent">{project.title}</h3>
 
               <div className="flex flex-wrap gap-2">
                 {project.skills.map((skill) => (
-                  <span 
+                  <span
                     key={skill}
                     className="px-3 py-1.5 bg-secondary/30 border border-accent/20 text-accent text-sm font-medium"
                   >
@@ -83,7 +83,7 @@ const ProjectsSection = () => {
               </p>
 
               {/* Project Links */}
-              <div className="flex gap-3 pt-2">
+              <div className="flex gap-3 pt-4">
                 <a
                   href={project.projectLink}
                   target="_blank"

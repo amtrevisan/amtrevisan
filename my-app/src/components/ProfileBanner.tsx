@@ -10,17 +10,21 @@ const ProfileBanner = () => {
         }}></div>
       </div>
 
-      {/* Profile Picture - Full Left Side */}
-      <div className="relative z-10 w-1/2 h-full bg-secondary/30 border-r-2 border-accent/20 flex items-center justify-center">
-        <img
-          src="/ProfilePhoto.jpeg"
-          alt="Alex Morales Trevisan"
-          className="w-full h-full object-cover"
-        />
+      {/* Profile Picture - Smaller Left Side */}
+      <div className="relative z-10 w-2/5 h-full flex items-center justify-start pl-16">
+        <div className="relative">
+          <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-accent/30 shadow-2xl">
+            <img
+              src="/ProfilePhoto.jpeg"
+              alt="Alex Morales Trevisan"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
       </div>
 
-      {/* Info Section - Full Right Side */}
-      <div className="relative z-10 w-1/2 h-full flex flex-col justify-center px-16">
+      {/* Info Section - Adjusted Right Side */}
+      <div className="relative z-10 w-3/5 h-full flex flex-col justify-center px-16">
         <h1 className="text-7xl font-bold text-accent mb-6 tracking-tight leading-tight">
           Alex Morales<br />Trevisan
         </h1>

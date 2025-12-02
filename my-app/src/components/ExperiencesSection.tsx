@@ -89,16 +89,16 @@ const ExperiencesSection = () => {
           <div className={`relative z-10 w-1/2 h-full flex flex-col justify-center px-16 ${
             index % 2 === 0 ? "" : "order-1"
           }`}>
-            <div className="space-y-4">
+            <div className="space-y-8">
               <div>
-                <h3 className="text-4xl font-bold text-accent mb-2">{exp.title}</h3>
-                <p className="text-xl text-muted-foreground">{exp.company}</p>
-                <p className="text-sm text-muted-foreground mt-1">{exp.period}</p>
+                <h3 className="text-4xl font-bold text-accent mb-3">{exp.title}</h3>
+                <p className="text-xl text-muted-foreground mb-2">{exp.company}</p>
+                <p className="text-sm text-muted-foreground">{exp.period}</p>
               </div>
 
               <div className="flex flex-wrap gap-2">
                 {exp.skills.map((skill) => (
-                  <span 
+                  <span
                     key={skill}
                     className="px-3 py-1.5 bg-secondary/30 border border-accent/20 text-accent text-sm font-medium"
                   >
