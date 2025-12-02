@@ -37,7 +37,7 @@ const ProfileBanner = () => {
 
       {/* Desktop Sticker Overlays */}
       {/* Puerto Rico Flag - Desktop: Center Screen (Half In/Out) */}
-      <div className="hidden md:block absolute top-8 left-1/2 -translate-x-1/2 z-20 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 p-0.5 bg-white rounded-lg shadow-lg">
+      <div className="hidden md:block absolute top-8 left-1/2 -translate-x-1/2 z-20 w-16 h-12 sm:w-20 sm:h-15 md:w-24 md:h-18 p-0.5 bg-white rounded-lg shadow-lg">
         <img
           src="/Flag_of_Puerto_Rico.svg"
           alt="Puerto Rico Flag"
@@ -52,7 +52,7 @@ const ProfileBanner = () => {
       />
 
       {/* Info Section - Bottom on mobile, right on desktop */}
-      <div className="relative z-10 w-full md:w-1/2 min-h-96 md:h-full flex flex-col justify-center px-8 md:px-16 py-8 md:py-0">
+      <div className="relative z-10 w-full md:w-1/2 min-h-96 md:h-full flex flex-col justify-center items-center px-8 md:px-16 py-8 md:py-0">
         <h1 className="text-4xl md:text-7xl font-bold text-accent mb-4 md:mb-6 tracking-tight leading-tight">
           Alex Morales<br />Trevisan
         </h1>
