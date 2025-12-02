@@ -16,7 +16,7 @@ const experiences = [
     period: "May - August 2023",
     skills: ["MATLAB", "LATEX"],
     description: "Conducted mathematical research in coding theory and combinatorics, applying discrete mathematics to solve theoretical and computational problems. Collaborated with faculty mentors and peers to design algorithms and analyze data structures. Developed analytical and problem-solving skills through projects in graph theory and error-correcting codes, relevant to software reliability and cryptography.",
-    imagePlaceholder: "/nsf.png"
+    imagePlaceholder: "/REU-CCTT-poster.pdf"
   },
   {
     id: 3,
