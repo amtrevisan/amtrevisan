@@ -2,7 +2,7 @@ import { Mail, Linkedin, Github, MapPin } from "lucide-react";
 
 const ProfileBanner = () => {
   return (
-    <section id="profile" className="relative w-full min-h-screen flex flex-col md:flex-row bg-primary overflow-hidden">
+    <section id="profile" className="relative w-full h-screen flex flex-col md:flex-row bg-primary overflow-hidden items-stretch">
       {/* Background texture */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -11,7 +11,7 @@ const ProfileBanner = () => {
       </div>
 
       {/* Profile Picture - Top on mobile, left on desktop */}
-      <div className="relative z-10 w-full md:w-1/2 h-96 md:h-4/5 bg-secondary/30 border-b-2 md:border-b-0 md:border-r-2 border-accent/20 flex items-center justify-center">
+      <div className="relative z-10 w-full md:w-[45%] h-80 md:h-[85vh] bg-secondary/30 border-b-2 md:border-b-0 md:border-r-2 border-accent/20 flex items-center justify-center overflow-hidden">
         <img
           src="/ProfilePhoto.jpeg"
           alt="Alex Morales Trevisan"
@@ -20,7 +20,7 @@ const ProfileBanner = () => {
 
         {/* Mobile Stickers - Different positioning for mobile */}
         {/* Puerto Rico Flag - Mobile: Top Left */}
-        <div className="absolute top-4 left-4 z-20 w-12 h-12 md:hidden p-0.5 bg-white rounded-lg shadow-lg">
+        <div className="absolute top-4 left-4 z-20 w-12 h-12 md:hidden p-[2px] bg-white rounded-lg shadow-lg">
           <img
             src="/Flag_of_Puerto_Rico.svg"
             alt="Puerto Rico Flag"
@@ -35,24 +35,16 @@ const ProfileBanner = () => {
         />
       </div>
 
-      {/* Desktop Sticker Overlays */}
-      {/* Puerto Rico Flag - Desktop: Center Screen (Half In/Out) */}
-      <div className="hidden md:block absolute top-8 left-1/2 -translate-x-1/2 z-20 w-18 h-12 sm:w-22 sm:h-15 md:w-27 md:h-18 p-1 bg-white rounded-lg shadow-lg">
-        <img
-          src="/Flag_of_Puerto_Rico.svg"
-          alt="Puerto Rico Flag"
-          className="w-full h-full rounded-md"
-        />
+      {/* Centered desktop stickers */}
+      <div className="hidden md:flex flex-col items-center absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-20 pointer-events-none space-y-8">
+        <div className="w-20 h-14 p-[3px] bg-white rounded-md shadow-md">
+          <img src="/Flag_of_Puerto_Rico.svg" alt="Puerto Rico Flag" className="w-full h-full rounded-sm" />
+        </div>
+        <img src="/coqui.svg" alt="Coqui Frog - Puerto Rico Symbol" className="w-24 h-24 opacity-90 drop-shadow-md" />
       </div>
-      {/* Coqui Sticker - Desktop: Center Screen (Half In/Out, 1.5x bigger) */}
-      <img
-        src="/coqui.svg"
-        alt="Coqui Frog - Puerto Rico Symbol"
-        className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 z-20 w-26 h-26 sm:w-33 sm:h-33 md:w-40 md:h-40 opacity-90 drop-shadow-lg"
-      />
 
       {/* Info Section - Bottom on mobile, right on desktop */}
-      <div className="relative z-10 w-full md:w-1/2 min-h-96 md:h-full flex flex-col justify-center items-center px-8 md:px-16 py-8 md:py-0">
+      <div className="relative z-10 w-full md:w-1/2 h-full flex flex-col justify-center items-start md:items-center px-8 md:px-16">
         <h1 className="text-4xl md:text-7xl font-bold text-accent mb-4 md:mb-6 tracking-tight leading-tight">
           Alex Morales<br />Trevisan
         </h1>
