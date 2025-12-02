@@ -17,17 +17,17 @@ const ProfileBanner = () => {
           alt="Alex Morales Trevisan"
           className="w-full h-full object-cover"
         />
-        {/* Puerto Rico Flag - Top Right (Half Out) */}
+        {/* Puerto Rico Flag - Center Right (Half Out) */}
         <img
           src="/Flag_of_Puerto_Rico.svg"
           alt="Puerto Rico Flag"
-          className="absolute -top-2 -right-2 w-20 h-16 drop-shadow-lg"
+          className="absolute top-1/2 -translate-y-6 -right-2 w-20 h-20 drop-shadow-lg"
         />
-        {/* Coqui Sticker - Bottom Right (Half Out) */}
+        {/* Coqui Sticker - Center Right (Half Out) */}
         <img
           src="/coqui.svg"
           alt="Coqui Frog - Puerto Rico Symbol"
-          className="absolute -bottom-2 -right-2 w-24 h-24 opacity-90 drop-shadow-lg"
+          className="absolute top-1/2 translate-y-6 -right-2 w-20 h-20 opacity-90 drop-shadow-lg"
         />
       </div>
 
