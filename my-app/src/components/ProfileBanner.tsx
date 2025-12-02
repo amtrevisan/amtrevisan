@@ -21,11 +21,13 @@ const ProfileBanner = () => {
 
       {/* Independent Sticker Overlays */}
       {/* Puerto Rico Flag - Center Screen (Half In/Out) */}
-      <img
-        src="/Flag_of_Puerto_Rico.svg"
-        alt="Puerto Rico Flag"
-        className="absolute top-8 left-1/2 -translate-x-1/2 z-20 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 drop-shadow-lg"
-      />
+      <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 p-1 bg-white rounded-lg shadow-lg">
+        <img
+          src="/Flag_of_Puerto_Rico.svg"
+          alt="Puerto Rico Flag"
+          className="w-full h-full rounded-md"
+        />
+      </div>
       {/* Coqui Sticker - Center Screen (Half In/Out, 1.5x bigger) */}
       <img
         src="/coqui.svg"
