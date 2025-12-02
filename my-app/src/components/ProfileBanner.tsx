@@ -10,17 +10,23 @@ const ProfileBanner = () => {
         }}></div>
       </div>
 
-      {/* Profile Picture - Medium Left Side */}
-      <div className="relative z-10 w-3/8 h-full bg-secondary/30 border-r-2 border-accent/20 flex items-center justify-center">
+      {/* Profile Picture - Half Left Side */}
+      <div className="relative z-10 w-1/2 h-full bg-secondary/30 border-r-2 border-accent/20 flex items-center justify-center">
         <img
           src="/ProfilePhoto.jpeg"
           alt="Alex Morales Trevisan"
           className="w-full h-full object-cover"
         />
+        {/* Coqui Sticker */}
+        <img
+          src="/coqui.svg"
+          alt="Coqui Frog - Puerto Rico Symbol"
+          className="absolute bottom-4 right-4 w-16 h-16 opacity-80"
+        />
       </div>
 
-      {/* Info Section - Adjusted Right Side */}
-      <div className="relative z-10 w-5/8 h-full flex flex-col justify-center px-16">
+      {/* Info Section - Half Right Side */}
+      <div className="relative z-10 w-1/2 h-full flex flex-col justify-center px-16">
         <h1 className="text-7xl font-bold text-accent mb-6 tracking-tight leading-tight">
           Alex Morales<br />Trevisan
         </h1>
