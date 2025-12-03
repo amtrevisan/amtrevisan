@@ -76,9 +76,9 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
     if (groupRef.current) {
       let xPosition = 0
       if (scrollProgress < 0.5) {
-        xPosition = 10 - (scrollProgress / 0.5) * 10
+        xPosition = -10 + (scrollProgress / 0.5) * 10
       } else {
-        xPosition = ((scrollProgress - 0.5) / 0.5) * 10
+        xPosition = -((scrollProgress - 0.5) / 0.5) * 10
       }
       groupRef.current.position.x = xPosition
 
