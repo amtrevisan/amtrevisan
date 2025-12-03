@@ -53,7 +53,7 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
           child.material.map = videoTexture
           child.material.emissiveMap = videoTexture
           child.material.emissive = new THREE.Color(0xffffff)
-          child.material.emissiveIntensity = 0.3
+          child.material.emissiveIntensity = 0.6
 
           child.material.roughness = 1.0
           child.material.metalness = 0.0
@@ -93,7 +93,7 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
     <group ref={groupRef}>
       <primitive
         object={gltf.scene}
-        scale={8}
+        scale={15}
         position={[0, -1, 0]}
       />
     </group>
