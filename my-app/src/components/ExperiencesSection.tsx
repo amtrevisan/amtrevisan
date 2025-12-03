@@ -24,7 +24,6 @@ const ExperiencesSection = () => {
   return (
     <section id="experiences" className="relative">
       {experiences.map((exp, index) => {
-        // Global index: experiences start at 0
         const globalIndex = index;
         const isEven = globalIndex % 2 === 0;
 
@@ -33,14 +32,12 @@ const ExperiencesSection = () => {
             key={exp.id}
             className={`relative min-h-screen md:h-screen flex flex-col md:flex-row overflow-hidden`}
           >
-            {/* Background texture */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute inset-0" style={{
                 backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23C2A84A" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
               }}></div>
             </div>
 
-            {/* Image Section - Full width on mobile, half on desktop */}
             <div className={`relative z-10 w-full md:w-1/2 h-64 md:h-full border-b-2 md:border-b-0 border-accent/20 flex items-center justify-center ${
               isEven ? "md:border-l-2 md:order-2" : "md:border-r-2"
             }`}>
@@ -76,7 +73,6 @@ const ExperiencesSection = () => {
               )}
             </div>
 
-            {/* Content Section - Full width on mobile, half on desktop */}
             <div className={`relative z-10 w-full md:w-1/2 min-h-96 md:h-full flex flex-col justify-center px-6 md:px-16 py-8 md:py-0 ${
               isEven ? "md:order-1" : ""
             }`}>

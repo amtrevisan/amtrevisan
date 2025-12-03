@@ -1,4 +1,5 @@
                         import { ExternalLink, Github } from "lucide-react";
+import MacBook from "./MacBook";
 
 const projects = [
   {
@@ -44,7 +45,6 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="relative">
       {projects.map((project, index) => {
-        // Global index: projects start after 2 experiences (global indices 2, 3, 4, 5)
         const globalIndex = index + 2;
         const isEven = globalIndex % 2 === 0;
 
@@ -53,28 +53,17 @@ const ProjectsSection = () => {
             key={project.id}
             className={`relative min-h-screen md:h-screen flex flex-col md:flex-row overflow-hidden`}
           >
-            {/* Background texture */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute inset-0" style={{
                 backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23C2A84A" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
               }}></div>
             </div>
 
-            {/* Image Section - Full width on mobile, half on desktop */}
             <div className={`relative z-10 w-full md:w-1/2 h-64 md:h-full border-b-2 md:border-b-0 border-accent/20 flex items-center justify-center ${
               isEven ? "md:border-l-2 md:order-2" : "md:border-r-2"
             }`}>
               {project.id === 1 ? (
-                <video
-                  className="w-4/5 max-w-2xl h-4/5 object-contain rounded-lg opacity-80"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                >
-                  <source src="/LaLigaMockup.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <MacBook />
               ) : project.id === 3 ? (
                 <video
                   className="w-4/5 max-w-md h-4/5 object-contain rounded-lg opacity-80"
@@ -91,7 +80,6 @@ const ProjectsSection = () => {
               )}
             </div>
 
-            {/* Content Section - Full width on mobile, half on desktop */}
             <div className={`relative z-10 w-full md:w-1/2 min-h-96 md:h-full flex flex-col justify-center px-6 md:px-16 py-8 md:py-0 ${
               isEven ? "md:order-1" : ""
             }`}>
@@ -113,7 +101,6 @@ const ProjectsSection = () => {
                   {project.description}
                 </p>
 
-                {/* Project Links */}
                 <div className="flex flex-col sm:flex-row gap-3 pt-4">
                   <a
                     href={project.projectLink}

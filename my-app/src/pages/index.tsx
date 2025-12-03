@@ -11,10 +11,9 @@ const Index = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["profile", "experiences", "projects"];
-      const scrollPosition = window.scrollY + 150; // Adjusted offset
+      const scrollPosition = window.scrollY + 150;
 
-      // Find which section we're currently in
-      let currentSection = "Profile"; // Default
+      let currentSection = "Profile";
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
@@ -32,7 +31,7 @@ const Index = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check initial position
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

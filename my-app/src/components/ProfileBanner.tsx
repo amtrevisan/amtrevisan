@@ -40,7 +40,6 @@ const ProfileBanner = () => {
         />
       </div>
 
-      {/* Desktop stickers - positioned absolutely within the section (not fixed) */}
       <div className="hidden md:block absolute inset-0 pointer-events-none z-50">
         <StickerPeel
           className="absolute top-[10vh] left-1/2 -translate-x-1/2 pointer-events-auto"
@@ -88,7 +87,6 @@ const ProfileBanner = () => {
           </a>
         </div>
 
-        {/* Skills Loop */}
         <div className="w-full mt-8 mb-8">
           <LogoLoop
             logos={skills}
