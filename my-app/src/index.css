@@ -8,94 +8,84 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Matte earthy palette - dark brown base */
-    --background: 25 16% 26%;
-    --foreground: 45 46% 52%;
+    /* Transparent backgrounds for full image visibility */
+    --background: 0 0% 0% / 0;
+    --foreground: 45 86% 92%;
 
-    --card: 25 16% 30%;
-    --card-foreground: 45 46% 52%;
+    --card: 0 0% 0% / 0;
+    --card-foreground: 45 86% 92%;
 
-    --popover: 25 16% 30%;
-    --popover-foreground: 45 46% 52%;
+    --popover: 0 0% 0% / 0;
+    --popover-foreground: 45 86% 92%;
 
-    /* Dark muted brown - main color */
-    --primary: 25 16% 26%;
-    --primary-foreground: 45 46% 52%;
+    --primary: 39 100% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Dark muted earthy green - secondary */
-    --secondary: 100 13% 27%;
-    --secondary-foreground: 45 46% 52%;
+    --secondary: 120 20% 40%;
+    --secondary-foreground: 45 86% 92%;
 
-    /* Muted tones */
-    --muted: 25 16% 35%;
-    --muted-foreground: 45 20% 65%;
+    --muted: 0 0% 0% / 0;
+    --muted-foreground: 45 86% 92%;
 
-    /* Matte yellow - highlight */
-    --accent: 45 46% 52%;
-    --accent-foreground: 25 16% 26%;
+    --accent: 39 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 65% 45%;
-    --destructive-foreground: 45 46% 90%;
+    --destructive-foreground: 45 86% 92%;
 
-    --border: 25 16% 38%;
-    --input: 25 16% 38%;
-    --ring: 45 46% 52%;
+    --border: 0 0% 0% / 0;
+    --input: 0 0% 0% / 0;
+    --ring: 39 100% 50%;
 
     --radius: 0.25rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 0% / 0;
+    --sidebar-foreground: 45 86% 92%;
+    --sidebar-primary: 39 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 120 20% 40%;
+    --sidebar-accent-foreground: 45 86% 92%;
+    --sidebar-border: 0 0% 0% / 0;
+    --sidebar-ring: 39 100% 50%;
   }
 
   .dark {
-    --background: 25 16% 26%;
-    --foreground: 45 46% 52%;
+    --background: 0 0% 0% / 0;
+    --foreground: 45 86% 92%;
 
-    --card: 25 16% 30%;
-    --card-foreground: 45 46% 52%;
+    --card: 0 0% 0% / 0;
+    --card-foreground: 45 86% 92%;
 
-    --popover: 25 16% 30%;
-    --popover-foreground: 45 46% 52%;
+    --popover: 0 0% 0% / 0;
+    --popover-foreground: 45 86% 92%;
 
-    --primary: 25 16% 26%;
-    --primary-foreground: 45 46% 52%;
+    --primary: 39 100% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 100 13% 27%;
-    --secondary-foreground: 45 46% 52%;
+    --secondary: 120 20% 40%;
+    --secondary-foreground: 45 86% 92%;
 
-    --muted: 25 16% 35%;
-    --muted-foreground: 45 20% 65%;
+    --muted: 0 0% 0% / 0;
+    --muted-foreground: 45 86% 92%;
 
-    --accent: 45 46% 52%;
-    --accent-foreground: 25 16% 26%;
+    --accent: 39 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 65% 45%;
-    --destructive-foreground: 45 46% 90%;
+    --destructive-foreground: 45 86% 92%;
 
-    --border: 25 16% 38%;
-    --input: 25 16% 38%;
-    --ring: 45 46% 52%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 0 0% 0% / 0;
+    --input: 0 0% 0% / 0;
+    --ring: 39 100% 50%;
+
+    --sidebar-background: 0 0% 0% / 0;
+    --sidebar-foreground: 45 86% 92%;
+    --sidebar-primary: 39 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 120 20% 40%;
+    --sidebar-accent-foreground: 45 86% 92%;
+    --sidebar-border: 0 0% 0% / 0;
+    --sidebar-ring: 39 100% 50%;
   }
 }
 
@@ -104,12 +94,24 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  html {
+    background: transparent;
+    overscroll-behavior: none;
   }
 
-  /* Force canvas transparency for glass effect */
-  canvas {
-    background: transparent !important;
+  body {
+    @apply text-foreground;
+    background: url('/background.jpg') repeat-y center top;
+    background-size: 100vw auto;
+    min-height: 100vh;
   }
+}
+
+/* Force Three.js canvas transparency - outside @layer to override */
+canvas {
+  background: transparent !important;
+}
+
+canvas[data-engine="three.js r167"] {
+  background: transparent !important;
 }

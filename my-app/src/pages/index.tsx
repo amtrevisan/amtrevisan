@@ -1,22 +1,21 @@
 import { useState, useEffect } from "react";
 import ProfileBanner from "@/components/ProfileBanner";
 import LiquidGlassNav from "@/components/LiquidGlassNav";
-import AboutSection from "@/components/AboutSection";
 import ExperiencesSection from "@/components/ExperiencesSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import PlantSeparator from "@/components/PlantSeparator";
+
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("Profile");
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["profile", "about", "experiences", "projects"];
+      const sections = ["profile", "experiences", "projects"];
       const scrollPosition = window.scrollY + 150; // Adjusted offset
 
       // Find which section we're currently in
       let currentSection = "Profile"; // Default
-      
+
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
         const element = document.getElementById(section);
@@ -28,7 +27,7 @@ const Index = () => {
           }
         }
       }
-      
+
       setActiveSection(currentSection);
     };
 
@@ -39,13 +38,12 @@ const Index = () => {
 
   const navItems = [
     { label: 'Profile', link: '#profile' },
-    { label: 'About', link: '#about' },
     { label: 'Experiences', link: '#experiences' },
     { label: 'Projects', link: '#projects' }
   ];
 
   return (
-    <div className="bg-primary min-h-screen relative">
+    <div className="min-h-screen relative">
       {/* Add more padding for fixed nav bar */}
       <div style={{ paddingTop: '120px' }}>
         {/* Profile Banner */}
@@ -56,18 +54,10 @@ const Index = () => {
         {/* Liquid Glass Navigation Bar */}
         <LiquidGlassNav items={navItems} activeSection={activeSection} />
 
-        <div id="about">
-          <AboutSection />
-        </div>
-        
-        <PlantSeparator />
-        
         <div id="experiences">
           <ExperiencesSection />
         </div>
-        
-        <PlantSeparator />
-        
+
         <div id="projects">
           <ProjectsSection />
         </div>

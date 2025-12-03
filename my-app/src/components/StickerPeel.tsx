@@ -1,8 +1,5 @@
 import { useRef, useEffect, useMemo, CSSProperties } from 'react';
 import { gsap } from 'gsap';
-import { Draggable } from 'gsap/Draggable';
-
-gsap.registerPlugin(Draggable);
 
 interface StickerPeelProps {
   imageSrc: string;
@@ -52,7 +49,6 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
   const dragTargetRef = useRef<HTMLDivElement>(null);
   const pointLightRef = useRef<SVGFEPointLightElement>(null);
   const pointLightFlippedRef = useRef<SVGFEPointLightElement>(null);
-  const draggableInstanceRef = useRef<Draggable | null>(null);
 
   const defaultPadding = 12;
 
@@ -74,68 +70,6 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
 
     gsap.set(target, { x: startX, y: startY });
   }, [initialPosition]);
-
-  useEffect(() => {
-    const target = dragTargetRef.current;
-    if (!target) return;
-
-    const boundsEl = target.parentNode as HTMLElement;
-
-    const draggable = Draggable.create(target, {
-      type: 'x,y',
-      bounds: boundsEl,
-      inertia: true,
-      onDrag(this: Draggable) {
-        const rot = gsap.utils.clamp(-24, 24, this.deltaX * 0.4);
-        gsap.to(target, { rotation: rot, duration: 0.15, ease: 'power1.out' });
-      },
-      onDragEnd() {
-        const rotationEase = 'power2.out';
-        const duration = 0.8;
-        gsap.to(target, { rotation: 0, duration, ease: rotationEase });
-      }
-    });
-
-    draggableInstanceRef.current = draggable[0];
-
-    const handleResize = () => {
-      if (draggableInstanceRef.current) {
-        draggableInstanceRef.current.update();
-
-        const currentX = gsap.getProperty(target, 'x') as number;
-        const currentY = gsap.getProperty(target, 'y') as number;
-
-        const boundsRect = boundsEl.getBoundingClientRect();
-        const targetRect = target.getBoundingClientRect();
-
-        const maxX = boundsRect.width - targetRect.width;
-        const maxY = boundsRect.height - targetRect.height;
-
-        const newX = Math.max(0, Math.min(currentX, maxX));
-        const newY = Math.max(0, Math.min(currentY, maxY));
-
-        if (newX !== currentX || newY !== currentY) {
-          gsap.to(target, {
-            x: newX,
-            y: newY,
-            duration: 0.3,
-            ease: 'power2.out'
-          });
-        }
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('orientationchange', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('orientationchange', handleResize);
-      if (draggableInstanceRef.current) {
-        draggableInstanceRef.current.kill();
-      }
-    };
-  }, []);
 
   useEffect(() => {
     const updateLight = (e: Event) => {
@@ -242,12 +176,13 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
 
   const imageStyle: CSSProperties = {
     transform: `rotate(calc(${rotate}deg - ${peelDirection}deg))`,
-    width: `${width}px`
+    width: `${width}px`,
+    imageRendering: 'pixelated'
   };
 
   const shadowImageStyle: CSSProperties = {
     ...imageStyle,
-    filter: 'url(#expandAndFill)'
+    filter: 'brightness(0) invert(1)'
   };
 
   return (
@@ -281,36 +216,6 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
 
       <svg width="0" height="0">
         <defs>
-          <filter id="pointLight">
-            <feGaussianBlur stdDeviation="1" result="blur" />
-            <feSpecularLighting
-              result="spec"
-              in="blur"
-              specularExponent="100"
-              specularConstant={lightingIntensity}
-              lightingColor="white"
-            >
-              <fePointLight ref={pointLightRef} x="100" y="100" z="300" />
-            </feSpecularLighting>
-            <feComposite in="spec" in2="SourceGraphic" result="lit" />
-            <feComposite in="lit" in2="SourceAlpha" operator="in" />
-          </filter>
-
-          <filter id="pointLightFlipped">
-            <feGaussianBlur stdDeviation="10" result="blur" />
-            <feSpecularLighting
-              result="spec"
-              in="blur"
-              specularExponent="100"
-              specularConstant={lightingIntensity * 7}
-              lightingColor="white"
-            >
-              <fePointLight ref={pointLightFlippedRef} x="100" y="100" z="300" />
-            </feSpecularLighting>
-            <feComposite in="spec" in2="SourceGraphic" result="lit" />
-            <feComposite in="lit" in2="SourceAlpha" operator="in" />
-          </filter>
-
           <filter id="dropShadow">
             <feDropShadow
               dx="2"
@@ -323,7 +228,7 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
 
           <filter id="expandAndFill">
             <feOffset dx="0" dy="0" in="SourceAlpha" result="shape" />
-            <feFlood floodColor="rgb(179,179,179)" result="flood" />
+            <feFlood floodColor="white" result="flood" />
             <feComposite operator="in" in="flood" in2="shape" />
           </filter>
         </defs>
@@ -342,42 +247,25 @@ const StickerPeel: React.FC<StickerPeelProps> = ({
         }}
       >
         <div className="sticker-main" style={stickerMainStyle}>
-          <div style={{ filter: 'url(#pointLight)' }}>
-            <img
-              src={imageSrc}
-              alt=""
-              className="block"
-              style={imageStyle}
-              draggable="false"
-              onContextMenu={e => e.preventDefault()}
-            />
-          </div>
+          <img
+            src={imageSrc}
+            alt=""
+            className="block"
+            style={imageStyle}
+            draggable="false"
+            onContextMenu={e => e.preventDefault()}
+          />
         </div>
 
-        <div className="absolute top-4 left-2 w-full h-full opacity-40" style={{ filter: 'brightness(0) blur(8px)' }}>
-          <div className="sticker-flap" style={flapStyle}>
-            <img
-              src={imageSrc}
-              alt=""
-              className="block"
-              style={shadowImageStyle}
-              draggable="false"
-              onContextMenu={e => e.preventDefault()}
-            />
-          </div>
-        </div>
-
-        <div className="sticker-flap absolute w-full h-full left-0" style={flapStyle}>
-          <div style={{ filter: 'url(#pointLightFlipped)' }}>
-            <img
-              src={imageSrc}
-              alt=""
-              className="block"
-              style={shadowImageStyle}
-              draggable="false"
-              onContextMenu={e => e.preventDefault()}
-            />
-          </div>
+        <div className="sticker-flap absolute w-full h-full left-0 top-0" style={flapStyle}>
+          <img
+            src={imageSrc}
+            alt=""
+            className="block"
+            style={shadowImageStyle}
+            draggable="false"
+            onContextMenu={e => e.preventDefault()}
+          />
         </div>
       </div>
     </div>

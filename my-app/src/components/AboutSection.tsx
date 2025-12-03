@@ -21,7 +21,7 @@ const skills = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="relative min-h-[70vh] bg-secondary flex items-center py-16 px-8 overflow-hidden w-full">
+    <section id="about" className="relative min-h-[70vh] flex items-center py-16 px-8 overflow-hidden w-full">
       {/* Background texture */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{

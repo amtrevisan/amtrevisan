@@ -16,7 +16,32 @@ const LiquidGlassNav = ({ items, activeSection = 'Profile' }: LiquidGlassNavProp
     if (link.startsWith('#')) {
       const element = document.querySelector(link);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        // Safari-compatible smooth scrolling with offset adjustment
+        const offset = 100; // Adjust this value to control how much space from top
+        const targetPosition = element.getBoundingClientRect().top + window.pageYOffset - offset;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = 800; // ms
+        let start: number | null = null;
+
+        const easeInOutCubic = (t: number): number => {
+          return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+        };
+
+        const animation = (currentTime: number) => {
+          if (start === null) start = currentTime;
+          const timeElapsed = currentTime - start;
+          const progress = Math.min(timeElapsed / duration, 1);
+          const ease = easeInOutCubic(progress);
+          
+          window.scrollTo(0, startPosition + distance * ease);
+          
+          if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+          }
+        };
+
+        requestAnimationFrame(animation);
       }
     } else {
       window.location.href = link;
@@ -46,10 +71,11 @@ const LiquidGlassNav = ({ items, activeSection = 'Profile' }: LiquidGlassNavProp
             <feDisplacementMap 
               in="SourceGraphic"
               in2="turbulence"    
-              scale="-25" 
+              scale="-40" 
               xChannelSelector="R" 
               yChannelSelector="G" 
             />
+            <feGaussianBlur stdDeviation="0.5" />
           </filter>
         </defs>
       </svg>
@@ -63,7 +89,8 @@ const LiquidGlassNav = ({ items, activeSection = 'Profile' }: LiquidGlassNavProp
           transform: 'translateX(-50%)',
           width: 'fit-content',
           maxWidth: '90%',
-          zIndex: 1000,
+          zIndex: 9999,
+          willChange: 'transform',
         }}
       >
         {/* Liquid Glass Card */}
@@ -79,9 +106,9 @@ const LiquidGlassNav = ({ items, activeSection = 'Profile' }: LiquidGlassNavProp
             borderRadius: '28px',
             overflow: 'hidden',
             
-            // Liquid glass effect - more transparent
-            backdropFilter: 'blur(4px) url(#liquidGlassFilter)',
-            WebkitBackdropFilter: 'blur(4px) url(#liquidGlassFilter)',
+            // Liquid glass effect - Safari compatible
+            backdropFilter: 'blur(4px)',
+            WebkitBackdropFilter: 'blur(4px)',
             
             // Drop shadow
             filter: 'drop-shadow(-6px -8px 32px rgba(0, 0, 0, 0.3))',
@@ -90,7 +117,7 @@ const LiquidGlassNav = ({ items, activeSection = 'Profile' }: LiquidGlassNavProp
             background: 'rgba(255, 255, 255, 0.01)',
           }}
         >
-          {/* Inner glow/border effect */}
+          {/* Inner glow/border effect - matches background */}
           <div
             style={{
               content: '""',
@@ -100,9 +127,9 @@ const LiquidGlassNav = ({ items, activeSection = 'Profile' }: LiquidGlassNavProp
               overflow: 'hidden',
               borderRadius: '28px',
               boxShadow: `
-                inset 3px 3px 0px -3px rgba(255, 255, 255, 0.5),
-                inset -2px -2px 0px -2px rgba(255, 255, 255, 0.25),
-                inset 0 0 10px 1px rgba(255, 255, 255, 0.4)
+                inset 3px 3px 0px -3px rgba(76, 86, 76, 0.5),
+                inset -2px -2px 0px -2px rgba(76, 86, 76, 0.25),
+                inset 0 0 10px 1px rgba(76, 86, 76, 0.4)
               `,
               pointerEvents: 'none',
             }}
@@ -119,7 +146,7 @@ const LiquidGlassNav = ({ items, activeSection = 'Profile' }: LiquidGlassNavProp
                 style={{
                   position: 'relative',
                   zIndex: 1,
-                  background: 'transparent',
+                  background: isActive ? 'rgba(194, 168, 74, 0.15)' : 'transparent',
                   border: 'none',
                   color: isActive ? '#C2A84A' : 'white',
                   fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)',
@@ -129,7 +156,7 @@ const LiquidGlassNav = ({ items, activeSection = 'Profile' }: LiquidGlassNavProp
                   borderRadius: '14px',
                   transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
                   textShadow: isActive 
-                    ? '0 2px 12px rgba(194, 168, 74, 0.8), 0 0 20px rgba(194, 168, 74, 0.4)' 
+                    ? '0 1px 4px rgba(194, 168, 74, 0.6)' 
                     : '0 2px 8px rgba(0, 0, 0, 0.6)',
                   whiteSpace: 'nowrap',
                 }}
@@ -141,11 +168,10 @@ const LiquidGlassNav = ({ items, activeSection = 'Profile' }: LiquidGlassNavProp
                   }
                 }}
                 onMouseLeave={(e) => {
-                  if (!isActive) {
-                    e.currentTarget.style.background = 'transparent';
-                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }
+                  // Reset to initial state based on whether button is active
+                  e.currentTarget.style.background = isActive ? 'rgba(194, 168, 74, 0.15)' : 'transparent';
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.boxShadow = 'none';
                 }}
               >
                 {item.label}
