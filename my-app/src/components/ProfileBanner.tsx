@@ -15,7 +15,7 @@ const ProfileBanner = () => {
         <img
           src="/ProfilePhoto.jpeg"
           alt="Alex Morales Trevisan"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-bottom"
         />
 
         {/* Mobile Stickers - Different positioning for mobile */}
@@ -36,8 +36,8 @@ const ProfileBanner = () => {
       </div>
 
       {/* Centered desktop stickers */}
-      <div className="hidden md:flex flex-col items-center absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-20 pointer-events-none">
-        <div className="w-20 h-14 p-[3px] bg-white rounded-md shadow-md mb-4">
+      <div className="hidden md:flex flex-col items-center absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-20 pointer-events-none space-y-8">
+        <div className="w-20 h-14 p-[3px] bg-white rounded-md shadow-md">
           <img src="/Flag_of_Puerto_Rico.svg" alt="Puerto Rico Flag" className="w-full h-full rounded-sm" />
         </div>
         <img src="/coqui.svg" alt="Coqui Frog - Puerto Rico Symbol" className="w-24 h-24 opacity-90 drop-shadow-md" />
