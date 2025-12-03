@@ -1,4 +1,5 @@
 import { Mail, Linkedin, Github, MapPin } from "lucide-react";
+import StickerPeel from './StickerPeel';
 
 const ProfileBanner = () => {
   return (
@@ -11,36 +12,68 @@ const ProfileBanner = () => {
       </div>
 
       {/* Profile Picture - Top on mobile, left on desktop */}
-      <div className="relative z-10 w-full md:w-1/2 h-80 md:h-[85vh] bg-secondary/30 border-b-2 md:border-b-0 md:border-r-2 border-accent/20 flex items-center justify-center overflow-hidden">
+      <div className="relative z-10 w-full md:w-1/2 h-80 md:h-[85vh] bg-secondary/30 border-b-2 md:border-b-0 md:border-r-2 border-accent/20 flex items-start md:items-center justify-center md:justify-start pt-8 md:pt-0 overflow-hidden">
         <img
           src="/ProfilePhoto.jpeg"
           alt="Alex Morales Trevisan"
-          className="w-full h-full object-cover object-bottom"
+          className="w-full h-full object-cover object-[50%_30%]"
         />
 
         {/* Mobile Stickers - Different positioning for mobile */}
         {/* Puerto Rico Flag - Mobile: Top Left */}
-        <div className="absolute top-4 left-4 z-20 w-12 h-12 md:hidden p-[2px] bg-white rounded-lg shadow-lg">
-          <img
-            src="/Flag_of_Puerto_Rico.svg"
-            alt="Puerto Rico Flag"
-            className="w-full h-full rounded-md"
+        <div className="absolute top-4 left-4 z-20 md:hidden">
+          <StickerPeel
+            imageSrc="/Flag_of_Puerto_Rico.svg"
+            width={48}
+            rotate={-15}
+            peelBackHoverPct={15}
+            peelBackActivePct={30}
+            shadowIntensity={0.4}
+            lightingIntensity={0.05}
+            initialPosition={{ x: 0, y: 0 }}
           />
         </div>
         {/* Coqui Sticker - Mobile: Top Right */}
-        <img
-          src="/coqui.svg"
-          alt="Coqui Frog - Puerto Rico Symbol"
-          className="absolute top-4 right-4 z-20 w-16 h-16 md:hidden opacity-90 drop-shadow-lg"
-        />
+        <div className="absolute top-4 right-4 z-20 md:hidden">
+          <StickerPeel
+            imageSrc="/coqui.svg"
+            width={64}
+            rotate={20}
+            peelBackHoverPct={15}
+            peelBackActivePct={30}
+            shadowIntensity={0.4}
+            lightingIntensity={0.05}
+            initialPosition={{ x: 0, y: 0 }}
+          />
+        </div>
       </div>
 
-      {/* Centered desktop stickers */}
-      <div className="hidden md:flex flex-col items-center absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-20 pointer-events-none space-y-8">
-        <div className="w-20 h-14 p-[3px] bg-white rounded-md shadow-md">
-          <img src="/Flag_of_Puerto_Rico.svg" alt="Puerto Rico Flag" className="w-full h-full rounded-sm" />
-        </div>
-        <img src="/coqui.svg" alt="Coqui Frog - Puerto Rico Symbol" className="w-24 h-24 opacity-90 drop-shadow-md" />
+      {/* Desktop stickers - top and bottom, center horizontally */}
+      {/* Top sticker */}
+      <div className="hidden md:block absolute top-[10%] left-1/2 -translate-x-1/2 z-20">
+        <StickerPeel
+          imageSrc="/Flag_of_Puerto_Rico.svg"
+          width={80}
+          rotate={-10}
+          peelBackHoverPct={20}
+          peelBackActivePct={40}
+          shadowIntensity={0.6}
+          lightingIntensity={0.1}
+          initialPosition={{ x: 0, y: 0 }}
+        />
+      </div>
+      {/* Bottom sticker */}
+      <div className="hidden md:block absolute bottom-[20%] left-1/2 -translate-x-1/2 z-20">
+        <StickerPeel
+          imageSrc="/coqui.svg"
+          width={96}
+          rotate={15}
+          peelBackHoverPct={20}
+          peelBackActivePct={40}
+          shadowIntensity={0.6}
+          lightingIntensity={0.1}
+          initialPosition={{ x: 0, y: 0 }}
+        />
       </div>
 
       {/* Info Section - Bottom on mobile, right on desktop */}
