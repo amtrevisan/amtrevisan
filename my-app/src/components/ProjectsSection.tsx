@@ -1,5 +1,6 @@
                         import { ExternalLink, Github } from "lucide-react";
 import MacBook from "./MacBook";
+import IPhone from "./iPhone";
 
 const projects = [
   {
@@ -65,16 +66,7 @@ const ProjectsSection = () => {
               {project.id === 1 ? (
                 <MacBook />
               ) : project.id === 3 ? (
-                <video
-                  className="w-4/5 max-w-md h-4/5 object-contain rounded-lg opacity-80"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                >
-                  <source src="/PronunciationMockup.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <IPhone />
               ) : (
                 <span className="text-accent/50 text-lg md:text-xl font-medium">{project.imagePlaceholder}</span>
               )}
