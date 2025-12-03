@@ -21,58 +21,62 @@ const ProfileBanner = () => {
 
         {/* Mobile Stickers - Different positioning for mobile */}
         {/* Puerto Rico Flag - Mobile: Top Left */}
-        <div className="absolute top-4 left-4 z-20 md:hidden">
+        <div style={{ willChange: 'transform', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
           <StickerPeel
+            className="absolute top-4 left-4 z-20 md:hidden"
             imageSrc="/Flag_of_Puerto_Rico.svg"
             width={48}
-            rotate={-15}
-            peelBackHoverPct={15}
-            peelBackActivePct={30}
+            peelBackHoverPct={0}
+            peelBackActivePct={0}
             shadowIntensity={0.4}
             lightingIntensity={0.05}
-            initialPosition={{ x: 0, y: 0 }}
+            peelDirection={0}
+            initialPosition="center"
           />
         </div>
         {/* Coqui Sticker - Mobile: Top Right */}
-        <div className="absolute top-4 right-4 z-20 md:hidden">
+        <div style={{ willChange: 'transform', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
           <StickerPeel
+            className="top-4 right-4 z-20 md:hidden"
             imageSrc="/coqui.svg"
             width={64}
-            rotate={20}
-            peelBackHoverPct={15}
+            rotate={0}
+            peelBackHoverPct={0}
             peelBackActivePct={30}
             shadowIntensity={0.4}
             lightingIntensity={0.05}
-            initialPosition={{ x: 0, y: 0 }}
+            peelDirection={-90}
+            initialPosition="center"
           />
         </div>
       </div>
 
-      {/* Desktop stickers - top and bottom, center horizontally */}
-      {/* Top sticker */}
-      <div className="hidden md:block absolute top-[10%] left-1/2 -translate-x-1/2 z-20">
+      {/* Desktop stickers - top and bottom, center horizontally - Outside photo container to avoid filters */}
+      <div style={{ willChange: 'transform', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
+        {/* Top sticker */}
         <StickerPeel
+          className="absolute top-[10%] left-1/2 -translate-x-1/2 z-30 hidden md:block"
           imageSrc="/Flag_of_Puerto_Rico.svg"
-          width={80}
-          rotate={-10}
+          width={130}
+          rotate={0}
           peelBackHoverPct={20}
-          peelBackActivePct={40}
           shadowIntensity={0.6}
           lightingIntensity={0.1}
-          initialPosition={{ x: 0, y: 0 }}
+          peelDirection={320}
+          initialPosition="center"
         />
-      </div>
-      {/* Bottom sticker */}
-      <div className="hidden md:block absolute bottom-[20%] left-1/2 -translate-x-1/2 z-20">
+        {/* Bottom sticker */}
         <StickerPeel
+          className="hidden md:block absolute bottom-[20%] left-1/2 -translate-x-1/2 z-30"
           imageSrc="/coqui.svg"
-          width={96}
-          rotate={15}
-          peelBackHoverPct={20}
-          peelBackActivePct={40}
+          width={130}
+          rotate={0}
+          peelBackHoverPct={40}
+          peelBackActivePct={0}
           shadowIntensity={0.6}
           lightingIntensity={0.1}
-          initialPosition={{ x: 0, y: 0 }}
+          peelDirection={320}
+          initialPosition="center"
         />
       </div>
 
@@ -93,7 +97,7 @@ const ProfileBanner = () => {
           {/* Email Badge */}
           <a
             href="mailto:alex.morales8@upr.edu"
-            className="backdrop-blur-sm bg-secondary/20 border border-accent/30 px-3 md:px-5 py-2 md:py-2.5 flex items-center gap-2 md:gap-2.5 transition-all hover:bg-secondary/30 hover:border-accent/50 text-xs md:text-sm"
+            className="backdrop-blur-sm bg-secondary/20 border border-accent/30 px-3 md:px-5 py-2 md:py-2.5 flex items-center gap-2 md:gap-2.5 transition-all hover:bg-secondary/30 hover:border-accent/50 text-xs md:text-sm rounded-md"
           >
             <Mail className="w-3 h-3 md:w-4 md:h-4 text-accent" />
             <span className="text-accent font-medium">alex.morales8@upr.edu</span>
@@ -104,7 +108,7 @@ const ProfileBanner = () => {
             href="https://www.linkedin.com/in/alex-morales-dev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="backdrop-blur-sm bg-secondary/20 border border-accent/30 p-2 md:p-3 flex items-center justify-center transition-all hover:bg-secondary/30 hover:border-accent/50 w-10 h-10 md:w-12 md:h-12"
+            className="backdrop-blur-sm bg-secondary/20 border border-accent/30 p-2 md:p-3 flex items-center justify-center transition-all hover:bg-secondary/30 hover:border-accent/50 w-10 h-10 md:w-12 md:h-12 rounded-md"
           >
             <Linkedin className="w-4 h-4 md:w-5 md:h-5 text-accent" />
           </a>
@@ -114,7 +118,7 @@ const ProfileBanner = () => {
             href="https://github.com/amtrevisan"
             target="_blank"
             rel="noopener noreferrer"
-            className="backdrop-blur-sm bg-secondary/20 border border-accent/30 p-2 md:p-3 flex items-center justify-center transition-all hover:bg-secondary/30 hover:border-accent/50 w-10 h-10 md:w-12 md:h-12"
+            className="backdrop-blur-sm bg-secondary/20 border border-accent/30 p-2 md:p-3 flex items-center justify-center transition-all hover:bg-secondary/30 hover:border-accent/50 w-10 h-10 md:w-12 md:h-12 rounded-md"
           >
             <Github className="w-4 h-4 md:w-5 md:h-5 text-accent" />
           </a>

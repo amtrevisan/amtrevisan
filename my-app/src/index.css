@@ -107,4 +107,9 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Force canvas transparency for glass effect */
+  canvas {
+    background: transparent !important;
+  }
 }

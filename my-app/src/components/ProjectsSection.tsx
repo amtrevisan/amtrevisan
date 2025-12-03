@@ -88,7 +88,7 @@ const ProjectsSection = () => {
                   href={project.projectLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="backdrop-blur-sm bg-accent/20 border border-accent/30 px-4 py-2.5 flex items-center justify-center gap-2 transition-all hover:bg-accent/30 hover:border-accent/50"
+                  className="backdrop-blur-sm bg-accent/20 border border-accent/30 px-4 py-2.5 flex items-center justify-center gap-2 transition-all hover:bg-accent/30 hover:border-accent/50 rounded-md"
                 >
                   <ExternalLink className="w-4 h-4 text-accent" />
                   <span className="text-accent text-sm font-medium">View Project</span>
@@ -98,7 +98,7 @@ const ProjectsSection = () => {
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="backdrop-blur-sm bg-accent/20 border border-accent/30 px-4 py-2.5 flex items-center justify-center gap-2 transition-all hover:bg-accent/30 hover:border-accent/50"
+                  className="backdrop-blur-sm bg-accent/20 border border-accent/30 px-4 py-2.5 flex items-center justify-center gap-2 transition-all hover:bg-accent/30 hover:border-accent/50 rounded-md"
                 >
                   <Github className="w-4 h-4 text-accent" />
                   <span className="text-accent text-sm font-medium">GitHub</span>
