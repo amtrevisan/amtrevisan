@@ -32,10 +32,10 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
     videoTexture.format = THREE.RGBAFormat
     videoTexture.colorSpace = THREE.SRGBColorSpace
     videoTexture.flipY = true
-    videoTexture.wrapS = THREE.ClampToEdgeWrapping
-    videoTexture.wrapT = THREE.ClampToEdgeWrapping
-    videoTexture.repeat.x = 1
-    videoTexture.repeat.y = 1
+    videoTexture.wrapS = THREE.RepeatWrapping
+    videoTexture.wrapT = THREE.RepeatWrapping
+    videoTexture.repeat.set(0.9, 0.9)
+    videoTexture.offset.set(0.05, 0.05)
     videoTextureRef.current = videoTexture
 
     gltf.scene.traverse((child: any) => {
