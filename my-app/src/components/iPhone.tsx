@@ -34,8 +34,8 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
     videoTexture.flipY = true
     videoTexture.wrapS = THREE.RepeatWrapping
     videoTexture.wrapT = THREE.RepeatWrapping
-    videoTexture.repeat.set(0.9, 0.9)
-    videoTexture.offset.set(0.05, 0.05)
+    videoTexture.repeat.set(1.0, 0.4)
+    videoTexture.offset.set(0.0, 0.3)
     videoTextureRef.current = videoTexture
 
     gltf.scene.traverse((child: any) => {
@@ -56,8 +56,8 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
           child.material.emissive = new THREE.Color(0xffffff)
           child.material.emissiveIntensity = 1.2
 
-          child.material.roughness = 1.0
-          child.material.metalness = 0.0
+          child.material.roughness = 0.8
+          child.material.metalness = 0.1
           child.material.aoMapIntensity = 0
 
           child.material.envMapIntensity = 0
@@ -95,7 +95,7 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
       <primitive
         object={gltf.scene}
         scale={15}
-        position={[0, 1, 0]}
+        position={[0, 0.5, 0]}
       />
     </group>
   )
