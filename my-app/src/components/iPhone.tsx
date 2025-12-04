@@ -13,7 +13,7 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
 
   useEffect(() => {
     const video = document.createElement('video')
-    video.src = '/PronunciationMockup_fixed.mp4'
+    video.src = '/PronunciationMockup.mp4'
     video.crossOrigin = 'anonymous'
     video.loop = true
     video.muted = true
