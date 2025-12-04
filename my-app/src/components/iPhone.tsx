@@ -54,7 +54,7 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
           child.material.map = videoTexture
           child.material.emissiveMap = videoTexture
           child.material.emissive = new THREE.Color(0xffffff)
-          child.material.emissiveIntensity = 0.6
+          child.material.emissiveIntensity = 1.2
 
           child.material.roughness = 1.0
           child.material.metalness = 0.0
