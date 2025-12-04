@@ -3,17 +3,17 @@ import { useGLTF, PerspectiveCamera } from '@react-three/drei'
 import { Suspense, useRef, useEffect, useState } from 'react'
 import * as THREE from 'three'
 
-useGLTF.preload('/iPhone 17 Pro.glb')
+useGLTF.preload('/apple-iphone-17-pro-max/source/iphone17promax.glb')
 
 function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
   const groupRef = useRef<THREE.Group>(null)
-  const gltf = useGLTF('/iPhone 17 Pro.glb')
+  const gltf = useGLTF('/apple-iphone-17-pro-max/source/iphone17promax.glb')
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const videoTextureRef = useRef<THREE.VideoTexture | null>(null)
 
   useEffect(() => {
     const video = document.createElement('video')
-    video.src = '/PronunciationMockup.mp4'
+    video.src = '/PronunciationMockup_fixed.mp4'
     video.crossOrigin = 'anonymous'
     video.loop = true
     video.muted = true
@@ -31,11 +31,14 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
     videoTexture.magFilter = THREE.LinearFilter
     videoTexture.format = THREE.RGBAFormat
     videoTexture.colorSpace = THREE.SRGBColorSpace
-    videoTexture.flipY = true
-    videoTexture.wrapS = THREE.RepeatWrapping
-    videoTexture.wrapT = THREE.RepeatWrapping
-    videoTexture.repeat.set(1.0, 0.4)
-    videoTexture.offset.set(0.0, 0.3)
+    
+    // Fix orientation and mirroring
+    videoTexture.flipY = true  // Flip vertically to fix upside down
+    videoTexture.wrapS = THREE.ClampToEdgeWrapping  // No mirroring
+    videoTexture.wrapT = THREE.ClampToEdgeWrapping  // No mirroring
+    videoTexture.repeat.set(1, 1)  // No zoom - show full video
+    videoTexture.offset.set(0, 0)  // Center position
+    
     videoTextureRef.current = videoTexture
 
     gltf.scene.traverse((child: any) => {
@@ -54,10 +57,10 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
           child.material.map = videoTexture
           child.material.emissiveMap = videoTexture
           child.material.emissive = new THREE.Color(0xffffff)
-          child.material.emissiveIntensity = 1.2
+          child.material.emissiveIntensity = 2.5  // Increased brightness
 
-          child.material.roughness = 0.8
-          child.material.metalness = 0.1
+          child.material.roughness = 0.3
+          child.material.metalness = 0.0
           child.material.aoMapIntensity = 0
 
           child.material.envMapIntensity = 0
