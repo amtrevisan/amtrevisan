@@ -46,26 +46,46 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
         console.log('Mesh:', child.name, 'Material:', child.material.name)
 
         const materialName = child.material.name || ''
+        const meshName = child.name || ''
+
+        // More aggressive screen detection
         if (materialName.toLowerCase().includes('screen') ||
             materialName.toLowerCase().includes('display') ||
-            child.name.toLowerCase().includes('screen') ||
-            child.name.toLowerCase().includes('display')) {
-          console.log('Found screen material:', child.material.name, 'on mesh:', child.name)
+            materialName.toLowerCase().includes('glass') ||
+            meshName.toLowerCase().includes('screen') ||
+            meshName.toLowerCase().includes('display') ||
+            meshName.toLowerCase().includes('glass') ||
+            materialName === 'gdQFWHoaObPzopH_8' || // Force replace this specific texture
+            materialName.includes('gdQFWHoaObPzopH_8')) {
 
+          console.log('REPLACING screen material:', child.material.name, 'on mesh:', child.name)
+
+          // Force clone and replace all texture maps
           child.material = child.material.clone()
 
+          // Clear all existing textures
+          child.material.map = null
+          child.material.emissiveMap = null
+          child.material.normalMap = null
+          child.material.roughnessMap = null
+          child.material.metalnessMap = null
+          child.material.aoMap = null
+
+          // Apply video texture
           child.material.map = videoTexture
           child.material.emissiveMap = videoTexture
           child.material.emissive = new THREE.Color(0xffffff)
-          child.material.emissiveIntensity = 2.5  // Increased brightness
+          child.material.emissiveIntensity = 3.0  // Even brighter
 
-          child.material.roughness = 0.3
+          // Override material properties
+          child.material.roughness = 0.1
           child.material.metalness = 0.0
+          child.material.transparent = false
           child.material.aoMapIntensity = 0
-
           child.material.envMapIntensity = 0
 
           child.material.needsUpdate = true
+          console.log('Video texture applied to:', child.material.name)
         }
       }
     })
