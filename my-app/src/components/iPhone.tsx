@@ -86,7 +86,7 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
       const rotationProgress = Math.max(0, Math.min(1, (scrollProgress - 0.2) / 0.6))
       groupRef.current.rotation.y = (1 - rotationProgress) * Math.PI - Math.PI / 2
 
-      groupRef.current.rotation.x = 0.3
+      groupRef.current.rotation.x = 0.2
     }
   })
 
