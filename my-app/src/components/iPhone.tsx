@@ -95,7 +95,7 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
       <primitive
         object={gltf.scene}
         scale={15}
-        position={[0, -1, 0]}
+        position={[0, 1, 0]}
       />
     </group>
   )
