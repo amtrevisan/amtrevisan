@@ -41,24 +41,48 @@ const ProfileBanner = () => {
       </div>
 
       <div className="hidden md:block absolute inset-0 pointer-events-none z-50">
+        {/* Top-left corner - Puerto Rico Flag */}
         <StickerPeel
-          className="absolute top-[10vh] left-1/2 -translate-x-1/2 pointer-events-auto"
-          imageSrc="/images/Flag_of_Puerto_Rico.svg"
-          width={130}
-          rotate={0}
+          className="absolute top-[15vh] left-[25vw] pointer-events-auto"
+          imageSrc="/images/PuertoRicoFlag.svg"
+          width={120}
+          rotate={-15}
           peelBackHoverPct={25}
           peelBackActivePct={40}
           peelDirection={320}
         />
 
+        {/* Top-right corner - Brazil Flag */}
         <StickerPeel
-          className="absolute top-[60vh] left-1/2 -translate-x-1/2 pointer-events-auto"
-          imageSrc="/images/coqui.svg"
-          width={130}
-          rotate={0}
+          className="absolute top-[15vh] right-[25vw] pointer-events-auto"
+          imageSrc="/images/BrazilFlag.png"
+          width={120}
+          rotate={15}
+          peelBackHoverPct={25}
+          peelBackActivePct={40}
+          peelDirection={40}
+        />
+
+        {/* Bottom-left corner - TypeScript Logo */}
+        <StickerPeel
+          className="absolute bottom-[15vh] left-[25vw] pointer-events-auto"
+          imageSrc="/images/TypeScriptLogo.svg"
+          width={100}
+          rotate={-10}
           peelBackHoverPct={30}
           peelBackActivePct={45}
           peelDirection={320}
+        />
+
+        {/* Bottom-right corner - Python Logo */}
+        <StickerPeel
+          className="absolute bottom-[15vh] right-[25vw] pointer-events-auto"
+          imageSrc="/images/PythonLogo.png"
+          width={100}
+          rotate={10}
+          peelBackHoverPct={30}
+          peelBackActivePct={45}
+          peelDirection={40}
         />
       </div>
 
