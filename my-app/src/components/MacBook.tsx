@@ -4,17 +4,17 @@ import { Suspense, useRef, useEffect, useState } from 'react'
 import * as THREE from 'three'
 
 // Preload the model
-useGLTF.preload('/models/LaLiga3d.glb')
+useGLTF.preload('/models/MacBook.glb')
 
 function MacBookModel({ scrollProgress }: { scrollProgress: number }) {
   const groupRef = useRef<THREE.Group>(null)
-  const gltf = useGLTF('/models/LaLiga3d.glb')
+  const gltf = useGLTF('/models/MacBook.glb')
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const videoTextureRef = useRef<THREE.VideoTexture | null>(null)
   
   useEffect(() => {
     const video = document.createElement('video')
-    video.src = '/videos/LaLigaDemo.mp4'
+    video.src = '/videos/MacBook-video.mp4'
     video.crossOrigin = 'anonymous'
     video.loop = true
     video.muted = true

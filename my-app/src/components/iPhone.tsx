@@ -3,16 +3,16 @@ import { useGLTF, PerspectiveCamera } from '@react-three/drei'
 import { Suspense, useRef, useEffect, useState } from 'react'
 import * as THREE from 'three'
 
-useGLTF.preload('/models/iphone17promax.glb')
+useGLTF.preload('/models/iPhone.glb')
 
 function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
   const groupRef = useRef<THREE.Group>(null)
-  const gltf = useGLTF('/models/iphone17promax.glb')
+  const gltf = useGLTF('/models/iPhone.glb')
   const videoRef = useRef<HTMLVideoElement | null>(null)
 
   useEffect(() => {
     const video = document.createElement('video')
-    video.src = '/videos/PronunciationMockup.mp4'
+    video.src = '/videos/iPhone-video.mp4'
     video.crossOrigin = 'anonymous'
     video.loop = true
     video.muted = true
