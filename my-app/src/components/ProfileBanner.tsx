@@ -34,7 +34,7 @@ const ProfileBanner = () => {
         false ? "md:border-l-2 md:order-2" : "md:border-r-2"
       }`}>
         <img
-          src="/ProfilePhoto.jpeg"
+          src="/images/ProfilePhoto.jpeg"
           alt="Alex Morales Trevisan"
           className="w-4/5 h-4/5 object-cover object-[50%_30%] rounded-lg"
         />
@@ -43,7 +43,7 @@ const ProfileBanner = () => {
       <div className="hidden md:block absolute inset-0 pointer-events-none z-50">
         <StickerPeel
           className="absolute top-[10vh] left-1/2 -translate-x-1/2 pointer-events-auto"
-          imageSrc="/Flag_of_Puerto_Rico.svg"
+          imageSrc="/images/Flag_of_Puerto_Rico.svg"
           width={130}
           rotate={0}
           peelBackHoverPct={25}
@@ -53,7 +53,7 @@ const ProfileBanner = () => {
 
         <StickerPeel
           className="absolute top-[60vh] left-1/2 -translate-x-1/2 pointer-events-auto"
-          imageSrc="/coqui.svg"
+          imageSrc="/images/coqui.svg"
           width={130}
           rotate={0}
           peelBackHoverPct={30}
