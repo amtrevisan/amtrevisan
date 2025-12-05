@@ -63,6 +63,8 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
           child.material.roughness = 1.0  // Completely matte to remove reflections
           child.material.metalness = 0.0
           child.material.envMapIntensity = 0  // Remove environment reflections
+          child.material.clearcoat = 0  // Remove glass-like coating
+          child.material.clearcoatRoughness = 1.0  // Make coating completely matte
           child.material.toneMapped = false
           child.material.needsUpdate = true
         }
@@ -95,7 +97,7 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
       // Animate rotation based on scroll
       const rotationProgress = Math.max(0, Math.min(1, (scrollProgress - 0.2) / 0.6))
       groupRef.current.rotation.y = (1 - rotationProgress) * Math.PI - Math.PI / 2
-      groupRef.current.rotation.x = -0.2
+      groupRef.current.rotation.x = -0.05
     }
   })
 
