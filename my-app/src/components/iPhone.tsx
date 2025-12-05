@@ -3,11 +3,11 @@ import { useGLTF, PerspectiveCamera } from '@react-three/drei'
 import { Suspense, useRef, useEffect, useState } from 'react'
 import * as THREE from 'three'
 
-useGLTF.preload('/apple-iphone-17-pro-max/source/iphone17promax.glb')
+useGLTF.preload('/iphone17promax.glb')
 
 function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
   const groupRef = useRef<THREE.Group>(null)
-  const gltf = useGLTF('/apple-iphone-17-pro-max/source/iphone17promax.glb')
+  const gltf = useGLTF('/iphone17promax.glb')
   const videoRef = useRef<HTMLVideoElement | null>(null)
 
   useEffect(() => {
