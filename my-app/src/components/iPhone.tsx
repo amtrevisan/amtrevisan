@@ -95,7 +95,7 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
       // Animate rotation based on scroll
       const rotationProgress = Math.max(0, Math.min(1, (scrollProgress - 0.2) / 0.6))
       groupRef.current.rotation.y = (1 - rotationProgress) * Math.PI - Math.PI / 2
-      groupRef.current.rotation.x = 0.2
+      groupRef.current.rotation.x = 0.287
     }
   })
 
@@ -104,7 +104,7 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
       <primitive
         object={gltf.scene}
         scale={30}
-        position={[0, 0.5, 0]}
+        position={[0, 0.2, 0]}
       />
     </group>
   )
