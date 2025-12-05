@@ -40,10 +40,11 @@ const ProfileBanner = () => {
         />
       </div>
 
-      <div className="hidden md:block absolute inset-0 pointer-events-none z-50">
-        {/* Top-left corner - Puerto Rico Flag */}
+      {/* Stickers positioned at profile image corners */}
+      <div className="hidden md:block absolute left-0 top-0 w-1/2 h-full pointer-events-none z-50">
+        {/* Top-left corner of profile image - Puerto Rico Flag */}
         <StickerPeel
-          className="absolute top-[15vh] left-[25vw] pointer-events-auto"
+          className="absolute top-[20vh] left-[7.5vw] pointer-events-auto"
           imageSrc="/images/PuertoRicoFlag.svg"
           width={120}
           rotate={-15}
@@ -52,20 +53,20 @@ const ProfileBanner = () => {
           peelDirection={320}
         />
 
-        {/* Top-right corner - Brazil Flag */}
+        {/* Top-right corner of profile image - Python Logo */}
         <StickerPeel
-          className="absolute top-[15vh] right-[25vw] pointer-events-auto"
-          imageSrc="/images/BrazilFlag.png"
-          width={120}
+          className="absolute top-[20vh] right-[7.5vw] pointer-events-auto"
+          imageSrc="/images/PythonLogo.png"
+          width={100}
           rotate={15}
-          peelBackHoverPct={25}
-          peelBackActivePct={40}
+          peelBackHoverPct={30}
+          peelBackActivePct={45}
           peelDirection={40}
         />
 
-        {/* Bottom-left corner - TypeScript Logo */}
+        {/* Bottom-left corner of profile image - TypeScript Logo */}
         <StickerPeel
-          className="absolute bottom-[15vh] left-[25vw] pointer-events-auto"
+          className="absolute bottom-[20vh] left-[7.5vw] pointer-events-auto"
           imageSrc="/images/TypeScriptLogo.svg"
           width={100}
           rotate={-10}
@@ -74,14 +75,14 @@ const ProfileBanner = () => {
           peelDirection={320}
         />
 
-        {/* Bottom-right corner - Python Logo */}
+        {/* Bottom-right corner of profile image - Brazil Flag */}
         <StickerPeel
-          className="absolute bottom-[15vh] right-[25vw] pointer-events-auto"
-          imageSrc="/images/PythonLogo.png"
-          width={100}
+          className="absolute bottom-[20vh] right-[7.5vw] pointer-events-auto"
+          imageSrc="/images/BrazilFlag.png"
+          width={120}
           rotate={10}
-          peelBackHoverPct={30}
-          peelBackActivePct={45}
+          peelBackHoverPct={25}
+          peelBackActivePct={40}
           peelDirection={40}
         />
       </div>
