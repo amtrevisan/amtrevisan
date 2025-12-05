@@ -101,7 +101,7 @@ All colors MUST be HSL.
 
   body {
     @apply text-foreground;
-    background: url('/background.jpg') repeat-y center top;
+    background: url('/images/background.jpg') repeat-y center top;
     background-size: 100vw auto;
     min-height: 100vh;
   }
