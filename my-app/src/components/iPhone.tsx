@@ -20,7 +20,7 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
     video.autoplay = true
 
     video.addEventListener('loadeddata', () => {
-      video.play().catch(err => console.error('Video autoplay failed:', err))
+      video.play().catch(() => {})
     })
 
     videoRef.current = video
