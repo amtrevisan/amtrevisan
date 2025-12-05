@@ -30,12 +30,8 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
     videoTexture.magFilter = THREE.LinearFilter
     videoTexture.format = THREE.RGBAFormat
     videoTexture.colorSpace = THREE.SRGBColorSpace
-    
-    // Fix upside down and mirroring
     videoTexture.center.set(0.5, 0.5)
     videoTexture.repeat.set(-1, -1)
-    videoTexture.rotation = 0
-    
     videoTexture.wrapS = THREE.RepeatWrapping
     videoTexture.wrapT = THREE.RepeatWrapping
 
@@ -46,36 +42,25 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
         const meshName = child.name
         const materialName = child.material.name
         
-        // Target exact screen mesh
         if (meshName === 'HkNSnYzBPABcqwM001' || materialName === 'BsXHDwLKqtDOfrW') {
-          console.log(`Applying video to screen: ${meshName}`)
           screenFound = true
-          
-          // Dispose old texture
           if (child.material.map) child.material.map.dispose()
           if (child.material.emissiveMap) child.material.emissiveMap.dispose()
-          
-          // Apply video texture with emissive only
+
           child.material.map = videoTexture
           child.material.emissiveMap = videoTexture
           child.material.emissive = new THREE.Color(0xffffff)
           child.material.emissiveIntensity = 1.0
-          child.material.roughness = 1.0  // Completely matte to remove reflections
+          child.material.roughness = 1.0
           child.material.metalness = 0.0
-          child.material.envMapIntensity = 0  // Remove environment reflections
-          child.material.clearcoat = 0  // Remove glass-like coating
-          child.material.clearcoatRoughness = 1.0  // Make coating completely matte
+          child.material.envMapIntensity = 0
+          child.material.clearcoat = 0
+          child.material.clearcoatRoughness = 1.0
           child.material.toneMapped = false
           child.material.needsUpdate = true
         }
       }
     })
-
-    if (!screenFound) {
-      console.error('No screen material found. Available materials listed above.')
-    } else {
-      console.log('Video texture applied successfully')
-    }
 
     return () => {
       video.pause()
