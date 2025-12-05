@@ -9,11 +9,10 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
   const groupRef = useRef<THREE.Group>(null)
   const gltf = useGLTF('/apple-iphone-17-pro-max/source/iphone17promax.glb')
   const videoRef = useRef<HTMLVideoElement | null>(null)
-  const videoTextureRef = useRef<THREE.VideoTexture | null>(null)
 
   useEffect(() => {
     const video = document.createElement('video')
-    video.src = '/PronunciationMockup.mp4'
+    video.src = '/PronunciationMockup_fixed.mp4'
     video.crossOrigin = 'anonymous'
     video.loop = true
     video.muted = true
@@ -21,7 +20,7 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
     video.autoplay = true
 
     video.addEventListener('loadeddata', () => {
-      video.play().catch(err => console.log('Video autoplay failed:', err))
+      video.play().catch(err => console.error('Video autoplay failed:', err))
     })
 
     videoRef.current = video
@@ -32,63 +31,49 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
     videoTexture.format = THREE.RGBAFormat
     videoTexture.colorSpace = THREE.SRGBColorSpace
     
-    // Fix orientation and mirroring
-    videoTexture.flipY = true  // Flip vertically to fix upside down
-    videoTexture.wrapS = THREE.ClampToEdgeWrapping  // No mirroring
-    videoTexture.wrapT = THREE.ClampToEdgeWrapping  // No mirroring
-    videoTexture.repeat.set(1, 1)  // No zoom - show full video
-    videoTexture.offset.set(0, 0)  // Center position
+    // Fix upside down and mirroring
+    videoTexture.center.set(0.5, 0.5)
+    videoTexture.repeat.set(-1, -1)
+    videoTexture.rotation = 0
     
-    videoTextureRef.current = videoTexture
+    videoTexture.wrapS = THREE.RepeatWrapping
+    videoTexture.wrapT = THREE.RepeatWrapping
+
+    let screenFound = false
 
     gltf.scene.traverse((child: any) => {
       if (child.isMesh && child.material) {
-        console.log('Mesh:', child.name, 'Material:', child.material.name)
-
-        const materialName = child.material.name || ''
-        const meshName = child.name || ''
-
-        // More aggressive screen detection
-        if (materialName.toLowerCase().includes('screen') ||
-            materialName.toLowerCase().includes('display') ||
-            materialName.toLowerCase().includes('glass') ||
-            meshName.toLowerCase().includes('screen') ||
-            meshName.toLowerCase().includes('display') ||
-            meshName.toLowerCase().includes('glass') ||
-            materialName === 'gdQFWHoaObPzopH_8' || // Force replace this specific texture
-            materialName.includes('gdQFWHoaObPzopH_8')) {
-
-          console.log('REPLACING screen material:', child.material.name, 'on mesh:', child.name)
-
-          // Force clone and replace all texture maps
-          child.material = child.material.clone()
-
-          // Clear all existing textures
-          child.material.map = null
-          child.material.emissiveMap = null
-          child.material.normalMap = null
-          child.material.roughnessMap = null
-          child.material.metalnessMap = null
-          child.material.aoMap = null
-
-          // Apply video texture
+        const meshName = child.name
+        const materialName = child.material.name
+        
+        // Target exact screen mesh
+        if (meshName === 'HkNSnYzBPABcqwM001' || materialName === 'BsXHDwLKqtDOfrW') {
+          console.log(`Applying video to screen: ${meshName}`)
+          screenFound = true
+          
+          // Dispose old texture
+          if (child.material.map) child.material.map.dispose()
+          if (child.material.emissiveMap) child.material.emissiveMap.dispose()
+          
+          // Apply video texture with emissive only
           child.material.map = videoTexture
           child.material.emissiveMap = videoTexture
           child.material.emissive = new THREE.Color(0xffffff)
-          child.material.emissiveIntensity = 3.0  // Even brighter
-
-          // Override material properties
-          child.material.roughness = 0.1
+          child.material.emissiveIntensity = 1.0
+          child.material.roughness = 1.0  // Completely matte to remove reflections
           child.material.metalness = 0.0
-          child.material.transparent = false
-          child.material.aoMapIntensity = 0
-          child.material.envMapIntensity = 0
-
+          child.material.envMapIntensity = 0  // Remove environment reflections
+          child.material.toneMapped = false
           child.material.needsUpdate = true
-          console.log('Video texture applied to:', child.material.name)
         }
       }
     })
+
+    if (!screenFound) {
+      console.error('No screen material found. Available materials listed above.')
+    } else {
+      console.log('Video texture applied successfully')
+    }
 
     return () => {
       video.pause()
@@ -98,6 +83,7 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
 
   useFrame(() => {
     if (groupRef.current) {
+      // Animate horizontal position based on scroll
       let xPosition = 0
       if (scrollProgress < 0.5) {
         xPosition = -10 + (scrollProgress / 0.5) * 10
@@ -106,9 +92,9 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
       }
       groupRef.current.position.x = xPosition
 
+      // Animate rotation based on scroll
       const rotationProgress = Math.max(0, Math.min(1, (scrollProgress - 0.2) / 0.6))
       groupRef.current.rotation.y = (1 - rotationProgress) * Math.PI - Math.PI / 2
-
       groupRef.current.rotation.x = 0.2
     }
   })
@@ -117,7 +103,7 @@ function IPhoneModel({ scrollProgress }: { scrollProgress: number }) {
     <group ref={groupRef}>
       <primitive
         object={gltf.scene}
-        scale={15}
+        scale={30}
         position={[0, 0.5, 0]}
       />
     </group>
@@ -143,7 +129,6 @@ export default function IPhone() {
 
       const rect = containerRef.current.getBoundingClientRect()
       const windowHeight = window.innerHeight
-
       const sectionTop = rect.top
       const sectionHeight = rect.height
 
