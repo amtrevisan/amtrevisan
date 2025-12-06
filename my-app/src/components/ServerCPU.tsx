@@ -42,8 +42,8 @@ function ServerCPUModel({ scrollProgress }: { scrollProgress: number }) {
     <group ref={groupRef}>
       <primitive
         object={gltf.scene}
-        scale={4}
-        position={[0, -2, 0]}
+        scale={0.8}
+        position={[0, 0, 0]}
       />
     </group>
   )
