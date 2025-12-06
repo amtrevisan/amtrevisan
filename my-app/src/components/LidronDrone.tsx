@@ -12,12 +12,12 @@ function LidronDroneModel({ scrollProgress }: { scrollProgress: number }) {
 
   useFrame(() => {
     if (groupRef.current) {
-      // Animate horizontal position based on scroll (right to left)
+      // Animate horizontal position based on scroll (right to right, like MacBook)
       let xPosition = 0
       if (scrollProgress < 0.5) {
         xPosition = 10 - (scrollProgress / 0.5) * 10
       } else {
-        xPosition = ((scrollProgress - 0.5) / 0.5) * (-10)
+        xPosition = ((scrollProgress - 0.5) / 0.5) * 10
       }
       groupRef.current.position.x = xPosition
 
