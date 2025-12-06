@@ -42,7 +42,7 @@ function HomeServerModel({ scrollProgress }: { scrollProgress: number }) {
     <group ref={groupRef}>
       <primitive
         object={gltf.scene}
-        scale={4}
+        scale={2}
         position={[0, -1, 0]}
       />
     </group>
@@ -91,7 +91,7 @@ export default function HomeServer() {
         gl={{ antialias: true, alpha: true }}
         dpr={[1, 2]}
       >
-        <PerspectiveCamera makeDefault position={[0, 0, 15]} fov={45} />
+        <PerspectiveCamera makeDefault position={[0, 0, 25]} fov={45} />
 
         <ambientLight intensity={0.6} />
         <directionalLight position={[5, 5, 5]} intensity={1.0} />
