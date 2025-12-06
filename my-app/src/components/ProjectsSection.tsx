@@ -1,6 +1,7 @@
                         import { ExternalLink, Github } from "lucide-react";
 import MacBook from "./MacBook";
 import IPhone from "./iPhone";
+import NSFPoster from "./NSFPoster";
 
 const projects = [
   {
@@ -12,7 +13,15 @@ const projects = [
     projectLink: "#",
     githubLink: "#"
   },
-
+  {
+    id: 2,
+    title: "NSF REU-CTT Research Project",
+    skills: ["Research", "Data Analysis", "Academic Writing", "Python", "Machine Learning"],
+    description: "Participated in the National Science Foundation Research Experience for Undergraduates program focused on Communication and Computation Theory. Conducted advanced research in signal processing and communication systems, developing algorithms for error correction and data transmission optimization. Analyzed complex datasets and presented findings at academic conferences.",
+    imagePlaceholder: "NSF Research Poster",
+    projectLink: "#",
+    githubLink: "#"
+  },
   {
     id: 3,
     title: "Pronunciation Coach Application",
@@ -65,6 +74,8 @@ const ProjectsSection = () => {
             }`}>
               {project.id === 1 ? (
                 <MacBook />
+              ) : project.id === 2 ? (
+                <NSFPoster />
               ) : project.id === 3 ? (
                 <IPhone />
               ) : (

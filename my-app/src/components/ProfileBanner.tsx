@@ -72,7 +72,7 @@ const ProfileBanner = () => {
           rotate={-10}
           peelBackHoverPct={30}
           peelBackActivePct={45}
-          peelDirection={320}
+          peelDirection={325}
         />
 
         {/* Bottom-right corner of profile image - Brazil Flag */}
@@ -83,7 +83,7 @@ const ProfileBanner = () => {
           rotate={10}
           peelBackHoverPct={25}
           peelBackActivePct={40}
-          peelDirection={320}
+          peelDirection={351}
         />
       </div>
 
