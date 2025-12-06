@@ -93,11 +93,9 @@ export default function HomeServer() {
       >
         <PerspectiveCamera makeDefault position={[0, 0, 25]} fov={45} />
 
-        <ambientLight intensity={0.6} />
-        <directionalLight position={[5, 5, 5]} intensity={1.0} />
-        <directionalLight position={[-5, -5, -5]} intensity={0.4} />
-        <pointLight position={[0, 5, 3]} intensity={0.6} />
-        <spotLight position={[0, 0, 10]} intensity={0.5} angle={0.4} />
+        <ambientLight intensity={0.4} />
+        <directionalLight position={[5, 5, 5]} intensity={0.6} />
+        <directionalLight position={[-5, -5, -5]} intensity={0.2} />
 
         <Suspense fallback={<Loader />}>
           <HomeServerModel scrollProgress={scrollProgress} />
