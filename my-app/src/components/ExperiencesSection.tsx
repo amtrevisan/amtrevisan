@@ -1,3 +1,5 @@
+import NSFPoster from "./NSFPoster";
+
 const experiences = [
   {
     id: 1,
@@ -14,9 +16,9 @@ const experiences = [
     title: "NSF Research Experience for Undergraduates",
     company: "University of Puerto Rico Mayagüez",
     period: "May - August 2023",
-    skills: ["MATLAB", "LATEX"],
-    description: "Conducted mathematical research in coding theory and combinatorics, applying discrete mathematics to solve theoretical and computational problems. Collaborated with faculty mentors and peers to design algorithms and analyze data structures. Developed analytical and problem-solving skills through projects in graph theory and error-correcting codes, relevant to software reliability and cryptography.",
-    imagePlaceholder: "/REU.jpg"
+    skills: ["Research", "Data Analysis", "Academic Writing", "Python", "Machine Learning"],
+    description: "Participated in the National Science Foundation Research Experience for Undergraduates program focused on Communication and Computation Theory. Conducted advanced research in signal processing and communication systems, developing algorithms for error correction and data transmission optimization. Analyzed complex datasets and presented findings at academic conferences.",
+    imagePlaceholder: "NSFPoster"
   }
 ];
 
@@ -52,6 +54,8 @@ const ExperiencesSection = () => {
                   <source src="/lidron.MOV" type="video/quicktime" />
                   Your browser does not support the video tag.
                 </video>
+              ) : exp.imagePlaceholder === 'NSFPoster' ? (
+                <NSFPoster />
               ) : exp.imagePlaceholder.startsWith('/') ? (
                 exp.imagePlaceholder.endsWith('.pdf') ? (
                   <embed
@@ -73,7 +77,7 @@ const ExperiencesSection = () => {
               )}
             </div>
 
-            <div className={`relative z-10 w-full md:w-1/2 min-h-96 md:h-full flex flex-col justify-center px-6 md:px-16 py-8 md:py-0 ${
+            <div className={`relative z-10 w-full md:w-1/2 min-h-96 md:h-full flex flex-col justify-center items-start px-6 md:px-16 py-8 md:py-0 ${
               isEven ? "md:order-1" : ""
             }`}>
               <div className="space-y-6 md:space-y-8">
