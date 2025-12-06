@@ -42,8 +42,8 @@ function LidronDroneModel({ scrollProgress }: { scrollProgress: number }) {
     <group ref={groupRef}>
       <primitive
         object={gltf.scene}
-        scale={6}
-        position={[0, 0, 0]}
+        scale={3}
+        position={[0, -1, 0]}
       />
     </group>
   )
