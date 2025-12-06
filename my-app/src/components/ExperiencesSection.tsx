@@ -1,4 +1,5 @@
 import NSFPoster from "./NSFPoster";
+import Hexacopter from "./Hexacopter";
 
 const experiences = [
   {
@@ -44,16 +45,7 @@ const ExperiencesSection = () => {
               isEven ? "md:border-l-2 md:order-2" : "md:border-r-2"
             }`}>
               {exp.imagePlaceholder === '/Lidron.png' ? (
-                <video
-                  className="w-4/5 h-4/5 object-cover object-top rounded-lg"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                >
-                  <source src="/lidron.MOV" type="video/quicktime" />
-                  Your browser does not support the video tag.
-                </video>
+                <Hexacopter />
               ) : exp.imagePlaceholder === 'NSFPoster' ? (
                 <NSFPoster />
               ) : exp.imagePlaceholder.startsWith('/') ? (
