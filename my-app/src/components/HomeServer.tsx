@@ -3,12 +3,12 @@ import { useGLTF, PerspectiveCamera } from '@react-three/drei'
 import { Suspense, useRef, useEffect, useState } from 'react'
 import * as THREE from 'three'
 
-// Preload the server CPU model
-useGLTF.preload('/models/server_cpu.glb')
+// Preload the home server model
+useGLTF.preload('/models/HomeServer.glb')
 
-function ServerCPUModel({ scrollProgress }: { scrollProgress: number }) {
+function HomeServerModel({ scrollProgress }: { scrollProgress: number }) {
   const groupRef = useRef<THREE.Group>(null)
-  const gltf = useGLTF('/models/server_cpu.glb')
+  const gltf = useGLTF('/models/HomeServer.glb')
 
   useFrame(() => {
     if (groupRef.current) {
@@ -42,7 +42,7 @@ function ServerCPUModel({ scrollProgress }: { scrollProgress: number }) {
     <group ref={groupRef}>
       <primitive
         object={gltf.scene}
-        scale={0.8}
+        scale={1.2}
         position={[0, 0, 0]}
       />
     </group>
@@ -58,7 +58,7 @@ function Loader() {
   )
 }
 
-export default function ServerCPU() {
+export default function HomeServer() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [scrollProgress, setScrollProgress] = useState(0)
 
@@ -100,7 +100,7 @@ export default function ServerCPU() {
         <spotLight position={[0, 0, 10]} intensity={0.5} angle={0.4} />
 
         <Suspense fallback={<Loader />}>
-          <ServerCPUModel scrollProgress={scrollProgress} />
+          <HomeServerModel scrollProgress={scrollProgress} />
         </Suspense>
       </Canvas>
     </div>
