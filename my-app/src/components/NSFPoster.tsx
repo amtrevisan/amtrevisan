@@ -32,12 +32,12 @@ function NSFPosterModel({ scrollProgress }: { scrollProgress: number }) {
 
   useFrame(() => {
     if (groupRef.current) {
-      // Animate horizontal position based on scroll (opposite of iPhone)
+      // Animate horizontal position based on scroll (left to right)
       let xPosition = 0
       if (scrollProgress < 0.5) {
-        xPosition = 10 - (scrollProgress / 0.5) * 10
+        xPosition = -10 + (scrollProgress / 0.5) * 10
       } else {
-        xPosition = ((scrollProgress - 0.5) / 0.5) * 10
+        xPosition = ((scrollProgress - 0.5) / 0.5) * (-10)
       }
       groupRef.current.position.x = xPosition
 
@@ -53,7 +53,7 @@ function NSFPosterModel({ scrollProgress }: { scrollProgress: number }) {
   return (
     <group ref={groupRef}>
       <mesh ref={planeRef} position={[0, 0, 0]}>
-        <planeGeometry args={[8, 11]} />
+        <planeGeometry args={[6, 8]} />
         <meshStandardMaterial />
       </mesh>
     </group>
@@ -104,11 +104,11 @@ export default function NSFPoster() {
       >
         <PerspectiveCamera makeDefault position={[0, 0, 12]} fov={45} />
 
-        <ambientLight intensity={1} />
-        <directionalLight position={[5, 5, 5]} intensity={1.5} />
-        <directionalLight position={[-5, -5, -5]} intensity={0.6} />
-        <pointLight position={[0, 5, 3]} intensity={1} />
-        <spotLight position={[0, 0, 10]} intensity={0.8} angle={0.4} />
+        <ambientLight intensity={0.6} />
+        <directionalLight position={[5, 5, 5]} intensity={0.8} />
+        <directionalLight position={[-5, -5, -5]} intensity={0.3} />
+        <pointLight position={[0, 5, 3]} intensity={0.5} />
+        <spotLight position={[0, 0, 10]} intensity={0.4} angle={0.4} />
 
         <NSFPosterModel scrollProgress={scrollProgress} />
       </Canvas>
