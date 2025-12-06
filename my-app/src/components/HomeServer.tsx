@@ -91,7 +91,7 @@ export default function HomeServer() {
         gl={{ antialias: true, alpha: true }}
         dpr={[1, 2]}
       >
-        <PerspectiveCamera makeDefault position={[0, 0, 8]} fov={45} />
+        <PerspectiveCamera makeDefault position={[0, 0, 15]} fov={45} />
 
         <ambientLight intensity={0.6} />
         <directionalLight position={[5, 5, 5]} intensity={1.0} />
