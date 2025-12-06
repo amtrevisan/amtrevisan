@@ -42,8 +42,8 @@ function HomeServerModel({ scrollProgress }: { scrollProgress: number }) {
     <group ref={groupRef}>
       <primitive
         object={gltf.scene}
-        scale={1.2}
-        position={[0, 0, 0]}
+        scale={4}
+        position={[0, -1, 0]}
       />
     </group>
   )
