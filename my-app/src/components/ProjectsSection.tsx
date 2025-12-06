@@ -83,7 +83,7 @@ const ProjectsSection = () => {
               )}
             </div>
 
-            <div className={`relative z-10 w-full md:w-1/2 min-h-96 md:h-full flex flex-col justify-center px-6 md:px-16 py-8 md:py-0 ${
+            <div className={`relative z-10 w-full md:w-1/2 min-h-96 md:h-full flex flex-col justify-center items-start px-6 md:px-16 py-8 md:py-0 ${
               isEven ? "md:order-1" : ""
             }`}>
               <div className="space-y-6 md:space-y-8">

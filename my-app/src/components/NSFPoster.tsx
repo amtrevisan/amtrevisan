@@ -11,13 +11,22 @@ function NSFPosterModel({ scrollProgress }: { scrollProgress: number }) {
     // Create texture from the REU-CTT poster image
     const textureLoader = new THREE.TextureLoader()
     textureLoader.load('/images/REUCTTPoster.jpg', (texture) => {
+      texture.wrapS = THREE.ClampToEdgeWrapping
+      texture.wrapT = THREE.ClampToEdgeWrapping
+      texture.minFilter = THREE.LinearFilter
+      texture.magFilter = THREE.LinearFilter
+      texture.needsUpdate = true
+
       if (planeRef.current) {
         planeRef.current.material = new THREE.MeshStandardMaterial({
           map: texture,
           transparent: false,
+          side: THREE.DoubleSide,
         })
         planeRef.current.material.needsUpdate = true
       }
+    }, undefined, (error) => {
+      console.error('Error loading NSF poster texture:', error)
     })
   }, [])
 
