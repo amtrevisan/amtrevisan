@@ -43,7 +43,7 @@ function HomeServerModel({ scrollProgress }: { scrollProgress: number }) {
       <primitive
         object={gltf.scene}
         scale={2}
-        position={[0, -1, 0]}
+        position={[0, -2, 0]}
       />
     </group>
   )
