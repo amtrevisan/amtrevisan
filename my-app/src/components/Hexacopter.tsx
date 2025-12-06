@@ -1,62 +1,4 @@
-import { Canvas, useFrame } from '@react-three/fiber'
-import { useGLTF, PerspectiveCamera } from '@react-three/drei'
-import { Suspense, useRef, useEffect, useState } from 'react'
-import * as THREE from 'three'
-
-// Preload the hexacopter model
-useGLTF.preload('/models/hexacopter.glb')
-
-function HexacopterModel({ scrollProgress }: { scrollProgress: number }) {
-  const groupRef = useRef<THREE.Group>(null)
-  const gltf = useGLTF('/models/hexacopter.glb')
-
-  useFrame(() => {
-    if (groupRef.current) {
-      // Animate horizontal position based on scroll (right to left)
-      let xPosition = 0
-      if (scrollProgress < 0.5) {
-        xPosition = 10 - (scrollProgress / 0.5) * 10
-      } else {
-        xPosition = ((scrollProgress - 0.5) / 0.5) * (-10)
-      }
-      groupRef.current.position.x = xPosition
-
-      // Animate rotation based on scroll
-      const rotationProgress = Math.max(0, Math.min(1, (scrollProgress - 0.2) / 0.6))
-      groupRef.current.rotation.y = (1 - rotationProgress) * Math.PI - Math.PI / 2
-
-      // Add slight tilt for 3D effect
-      groupRef.current.rotation.x = 0.05
-
-      // Add propeller rotation animation
-      const propellerSpeed = 20
-      gltf.scene.traverse((child: any) => {
-        if (child.name && child.name.toLowerCase().includes('propeller')) {
-          child.rotation.z += propellerSpeed * 0.01
-        }
-      })
-    }
-  })
-
-  return (
-    <group ref={groupRef}>
-      <primitive
-        object={gltf.scene}
-        scale={8}
-        position={[0, 0, 0]}
-      />
-    </group>
-  )
-}
-
-function Loader() {
-  return (
-    <mesh>
-      <boxGeometry args={[2, 0.1, 1.5]} />
-      <meshStandardMaterial color="#C2A84A" wireframe />
-    </mesh>
-  )
-}
+import { useRef, useEffect, useState } from 'react'
 
 export default function Hexacopter() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -84,25 +26,28 @@ export default function Hexacopter() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Calculate opacity and transform based on scroll progress
+  const opacity = Math.max(0, Math.min(1, scrollProgress * 2))
+  const transform = `translateX(${(1 - scrollProgress) * 50}px) scale(${0.8 + scrollProgress * 0.2})`
+
   return (
     <div ref={containerRef} className="w-full h-full flex items-center justify-center">
-      <Canvas
-        style={{ height: '100%', width: '100%' }}
-        gl={{ antialias: true, alpha: true }}
-        dpr={[1, 2]}
+      <div
+        className="w-full h-full transition-all duration-300 ease-out"
+        style={{
+          opacity,
+          transform,
+        }}
       >
-        <PerspectiveCamera makeDefault position={[0, 0, 10]} fov={45} />
-
-        <ambientLight intensity={0.8} />
-        <directionalLight position={[5, 5, 5]} intensity={1.2} />
-        <directionalLight position={[-5, -5, -5]} intensity={0.5} />
-        <pointLight position={[0, 5, 3]} intensity={0.8} />
-        <spotLight position={[0, 0, 10]} intensity={0.6} angle={0.4} />
-
-        <Suspense fallback={<Loader />}>
-          <HexacopterModel scrollProgress={scrollProgress} />
-        </Suspense>
-      </Canvas>
+        <iframe
+          title="Hexacopter - Tarot T810"
+          frameBorder="0"
+          allowFullScreen
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          src="https://sketchfab.com/models/d8f7095c811e41dd9430653c981d1f86/embed"
+          className="w-full h-full rounded-lg"
+        />
+      </div>
     </div>
   )
 }
