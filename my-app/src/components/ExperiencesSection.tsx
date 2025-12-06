@@ -1,5 +1,5 @@
 import NSFPoster from "./NSFPoster";
-import Hexacopter from "./Hexacopter";
+import LidronDrone from "./LidronDrone";
 
 const experiences = [
   {
@@ -45,7 +45,7 @@ const ExperiencesSection = () => {
               isEven ? "md:border-l-2 md:order-2" : "md:border-r-2"
             }`}>
               {exp.imagePlaceholder === '/Lidron.png' ? (
-                <Hexacopter />
+                <LidronDrone />
               ) : exp.imagePlaceholder === 'NSFPoster' ? (
                 <NSFPoster />
               ) : exp.imagePlaceholder.startsWith('/') ? (
